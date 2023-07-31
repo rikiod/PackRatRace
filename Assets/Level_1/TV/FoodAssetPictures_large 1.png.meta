@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 35bedc5218345044abc1bcef61c81888
+guid: 97c6ab1cec1996c4f8449f0ecb8db0bf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FoodAssetPictures_large_0
+      name: FoodAssetPictures_large 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d54fdac0765dc5545ba035eab6f6429f
-      internalID: 1829550396
+      spriteID: daa0d98c385fa4246a66ec20fbb6fb63
+      internalID: 268504107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FoodAssetPictures_large_1
+      name: FoodAssetPictures_large 1_1
       rect:
         serializedVersion: 2
         x: 240
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c24f0cb15438fe448aaf7687ec80e478
-      internalID: -688362265
+      spriteID: 1d1058929661ba64eb1e74b4f2bcb2bd
+      internalID: 1621763517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FoodAssetPictures_large_2
+      name: FoodAssetPictures_large 1_2
       rect:
         serializedVersion: 2
         x: 480
@@ -185,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d232fad42278a754a9441e46c272e10e
-      internalID: 434440669
+      spriteID: 74f7316ff00105d45b61a2cab91e711d
+      internalID: 102184422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FoodAssetPictures_large_3
+      name: FoodAssetPictures_large 1_3
       rect:
         serializedVersion: 2
         x: 720
@@ -206,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 304f9b468f6e87148a7f8d440b346cd7
-      internalID: -1109202801
+      spriteID: 45fe820d1b516664b9b3f0834243e03e
+      internalID: -1533280186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FoodAssetPictures_large_4
+      name: FoodAssetPictures_large 1_4
       rect:
         serializedVersion: 2
         x: 0
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a88fdb7ebebeac4f866b5e9223dac1e
-      internalID: 292138033
+      spriteID: 67eeb67fa255df245a80eedb3b2ba847
+      internalID: 1858692574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FoodAssetPictures_large_5
+      name: FoodAssetPictures_large 1_5
       rect:
         serializedVersion: 2
         x: 240
@@ -248,14 +248,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ac87d8b3536ab34a876fbfb360290e6
-      internalID: 2034625623
+      spriteID: 1035276f6c8c412428b841ed34083874
+      internalID: -780984150
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FoodAssetPictures_large_6
+      name: FoodAssetPictures_large 1_6
       rect:
         serializedVersion: 2
         x: 480
@@ -269,14 +269,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d28a532c47471ef4d93f1b469dbc7532
-      internalID: 587479661
+      spriteID: 1fc0fc2eaaed15242be0e6eaffb4935a
+      internalID: -1596824262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FoodAssetPictures_large_7
+      name: FoodAssetPictures_large 1_7
       rect:
         serializedVersion: 2
         x: 720
@@ -290,14 +290,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dfbd9b29f9dc2f4faf7ef51330aa6c2
-      internalID: -1181461066
+      spriteID: fbe5c0f9c9e2b4744a83f2abe18d349f
+      internalID: 710403973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FoodAssetPictures_large_8
+      name: FoodAssetPictures_large 1_8
       rect:
         serializedVersion: 2
         x: 0
@@ -311,14 +311,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 101c9fc47371beb4986b659457f6654f
-      internalID: -1924721846
+      spriteID: 9f2c77b0434bc6a45ab9da17719d9505
+      internalID: -182977393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FoodAssetPictures_large_9
+      name: FoodAssetPictures_large 1_9
       rect:
         serializedVersion: 2
         x: 240
@@ -332,14 +332,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d89ca7a4ce2beb94fa75c6ca44893795
-      internalID: -59286382
+      spriteID: e7623669104556a4ea7ac56e9ed844d2
+      internalID: -1342351752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FoodAssetPictures_large_10
+      name: FoodAssetPictures_large 1_10
       rect:
         serializedVersion: 2
         x: 480
@@ -353,14 +353,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7908afa5f4f04d44bf2c0171b8de195
-      internalID: 774187087
+      spriteID: f6dd3ac3ab879e245a8bd72a3b797779
+      internalID: 1004779219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FoodAssetPictures_large_11
+      name: FoodAssetPictures_large 1_11
       rect:
         serializedVersion: 2
         x: 720
@@ -374,14 +374,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cf31194d3bb20c49a1c95e877e224c5
-      internalID: -1830783535
+      spriteID: 6521443a82bba0c4c86c83e588a69f8e
+      internalID: -644721086
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FoodAssetPictures_large_12
+      name: FoodAssetPictures_large 1_12
       rect:
         serializedVersion: 2
         x: 0
@@ -395,14 +395,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7c01ba2b43a3d84da9abe59421b4d0d
-      internalID: 1583008730
+      spriteID: ffa4b0631e2e28a41a35d7f196bf3d6b
+      internalID: -1320115290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FoodAssetPictures_large_13
+      name: FoodAssetPictures_large 1_13
       rect:
         serializedVersion: 2
         x: 240
@@ -416,14 +416,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3eee0c05821a484883ea922ea4f3a92
-      internalID: -1972041200
+      spriteID: 9e61591d25aad8145bcd869db55ea4fc
+      internalID: 1144719565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FoodAssetPictures_large_14
+      name: FoodAssetPictures_large 1_14
       rect:
         serializedVersion: 2
         x: 480
@@ -437,8 +437,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a62245f35d29df43ad88e6ad619bb51
-      internalID: 2102287733
+      spriteID: e565380b1405f10428d2eeb1c3a3fe69
+      internalID: -1418076231
       vertices: []
       indices: 
       edges: []
@@ -446,7 +446,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 41a4aec4a9a4eea40b83f5c25599851a
+    spriteID: 419b69192b422b14bad489776471daf5
     internalID: 0
     vertices: []
     indices: 
@@ -454,21 +454,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FoodAssetPictures_large_1: -688362265
-      FoodAssetPictures_large_14: 2102287733
-      FoodAssetPictures_large_0: 1829550396
-      FoodAssetPictures_large_3: -1109202801
-      FoodAssetPictures_large_6: 587479661
-      FoodAssetPictures_large_7: -1181461066
-      FoodAssetPictures_large_9: -59286382
-      FoodAssetPictures_large_13: -1972041200
-      FoodAssetPictures_large_4: 292138033
-      FoodAssetPictures_large_10: 774187087
-      FoodAssetPictures_large_2: 434440669
-      FoodAssetPictures_large_12: 1583008730
-      FoodAssetPictures_large_11: -1830783535
-      FoodAssetPictures_large_5: 2034625623
-      FoodAssetPictures_large_8: -1924721846
+      FoodAssetPictures_large 1_10: 1004779219
+      FoodAssetPictures_large 1_14: -1418076231
+      FoodAssetPictures_large 1_2: 102184422
+      FoodAssetPictures_large 1_6: -1596824262
+      FoodAssetPictures_large 1_5: -780984150
+      FoodAssetPictures_large 1_7: 710403973
+      FoodAssetPictures_large 1_11: -644721086
+      FoodAssetPictures_large 1_12: -1320115290
+      FoodAssetPictures_large 1_3: -1533280186
+      FoodAssetPictures_large 1_1: 1621763517
+      FoodAssetPictures_large 1_13: 1144719565
+      FoodAssetPictures_large 1_0: 268504107
+      FoodAssetPictures_large 1_4: 1858692574
+      FoodAssetPictures_large 1_8: -182977393
+      FoodAssetPictures_large 1_9: -1342351752
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
