@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RandomSpawner : MonoBehaviour
 {
-    public List<GameObject> spawnItemList;
+    public List<GameObject> spawnItemList = new List<GameObject>();
 
     public float frequency;
     public float initialSpeed;
@@ -16,7 +16,7 @@ public class RandomSpawner : MonoBehaviour
     {
         if (Time.time > lastSpawnedTime + frequency)
         {
-            GameObject spawnItem = spawnItemList[GetRandomNumber(0, spawnItemList.Count-1)];
+            GameObject spawnItem = spawnItemList[GetRandomNumber(0, spawnItemList.Count)];
             Spawn(spawnItem);
             lastSpawnedTime = Time.time;
         }
