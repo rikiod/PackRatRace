@@ -8,6 +8,7 @@ public class buttonPress : MonoBehaviour
     public GameObject button;
     public UnityEvent onPress;
     public UnityEvent onRelease;
+    GameObject pusher;
     bool isPressed;
     // Start is called before the first frame update
     void Start()
@@ -23,9 +24,22 @@ public class buttonPress : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // if (!isPressed)
-        // {
-        //     button.tansform.forward
-        // }
+        if (!isPressed)
+        {
+            button.transform.localPosition -= button.transform.right * 1/20;
+            pusher = other.gameObject;
+            onPress.Invoke();
+            isPressed = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (pusher == other.gameObject)
+        {
+            button.transform.localPosition += button.transform.right * 1/20;
+            onPress.Invoke();
+            isPressed = false;
+        }
     }
 }
