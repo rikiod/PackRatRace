@@ -12,7 +12,7 @@ public class catMovement : MonoBehaviour
         startingPoint = transform.position;
     }
 
-    [SerializeField] Vector3 targetPoint = new Vector3(3, 0, 3);
+    [SerializeField] Vector3 targetPoint = new Vector3(-0.25, 0, -2);
     [SerializeField] float speed = 1; 
     int direction = 0; 
 
@@ -20,22 +20,15 @@ public class catMovement : MonoBehaviour
     void Update()
     {
         if (transform.position == targetPoint) {
-            Debug.Log("b1");
             direction = 0; 
         } else if (transform.position == startingPoint) {
-                        Debug.Log("b2");
-
             direction = 1;
         }
 
         if (direction == 0) {
-                        Debug.Log("b3");
-
             transform.position = Vector3.MoveTowards(transform.position, startingPoint, Time.deltaTime * speed);
         }
        if (direction == 1) {
-                    Debug.Log("b4");
-
             transform.position = Vector3.MoveTowards(transform.position, targetPoint, Time.deltaTime * speed);
        }
         
