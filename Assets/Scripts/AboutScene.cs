@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartScene : MonoBehaviour
+public class AboutScene : MonoBehaviour
 {
     // make sure sprite is clickable / has collider 
-    [SerializeField] string sceneName = "Level1";
+    [SerializeField] string sceneName = "about"; // this scene doesn't exist ... 
 
     public void LoadScene() {
-        print("loaded level 1 scene");
+        print("loading about scene");
         SceneManager.LoadScene(sceneName);
     }
 
