@@ -1472,7 +1472,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 0}
+  m_ModelPrefab: {fileID: 7823203843573935741, guid: 142872515144af84a8564e2b0b96daff, type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -1505,10 +1505,10 @@ MonoBehaviour:
   m_IsTrackedAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Is Tracked
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: dbeae8bc-b84f-46d2-906e-0702997b8926
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1601,10 +1601,10 @@ MonoBehaviour:
   m_UIScrollAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: UI Scroll
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: 
+      m_Id: da7ea92b-fa55-497e-a883-2ba963c7d5c9
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1637,10 +1637,10 @@ MonoBehaviour:
   m_DirectionalAnchorRotationAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Directional Anchor Rotation
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: 
+      m_Id: 27157d33-0ae2-4837-9b13-4b738e9c29e7
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -3320,7 +3320,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 0}
+  m_ModelPrefab: {fileID: 2680034563851987896, guid: b5d3e606d81b4714f9eacaf27943cbe5, type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -3353,10 +3353,10 @@ MonoBehaviour:
   m_IsTrackedAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Is Tracked
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 75f787ac-56e0-4dca-a94d-ddc9bd297310
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -3449,10 +3449,10 @@ MonoBehaviour:
   m_UIScrollAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: UI Scroll
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: 
+      m_Id: 2dc1ad0b-ce6a-4359-aaa5-5d7deb5800db
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -3485,10 +3485,10 @@ MonoBehaviour:
   m_DirectionalAnchorRotationAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Directional Anchor Rotation
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: 
+      m_Id: 8d352fd1-4e26-443d-87b7-31a752772167
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
