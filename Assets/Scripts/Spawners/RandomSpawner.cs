@@ -62,7 +62,7 @@ public class RandomSpawner : MonoBehaviour
 
     public void Spawn(GameObject spawnItem)
     {
-        Vector3 spawnPosition = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), Mathf.Round(transform.position.z));
+        Vector3 spawnPosition = new Vector3(Mathf.Round(transform.position.x) - (3/10), Mathf.Round(transform.position.y) + 1, Mathf.Round(transform.position.z));
         GameObject newSpawnedObject = Instantiate(spawnItem, spawnPosition, Quaternion.identity);
         newSpawnedObject.GetComponent<Rigidbody>().velocity = transform.forward * initialSpeed;
         newSpawnedObject.transform.parent = transform;
