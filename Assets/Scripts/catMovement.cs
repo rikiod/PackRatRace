@@ -10,11 +10,12 @@ public class catMovement : MonoBehaviour
     [SerializeField] float minWaitTime = 10f;
     [SerializeField] float maxWaitTime = 30f;
     bool isMoving = true;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        startingPoint = transform.position;
+        // startingPoint = transform.position;
         StartCoroutine(WaitThenChangeDirection());
     }
 
@@ -35,6 +36,7 @@ public class catMovement : MonoBehaviour
             float waitTime = Random.Range(minWaitTime, maxWaitTime);
             yield return new WaitForSeconds(waitTime);
 
+            
             isMoving = !isMoving;
         }
     }
