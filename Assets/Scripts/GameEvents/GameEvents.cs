@@ -10,7 +10,7 @@ public class GameEvents : ScriptableObject
     //Raise event through different methods signature
     public void Raise(Component sender, object data)
     {
-        for (int i = listeners.Count; i <0; i--)
+        for (int i = listeners.Count -1; i >= 0; i--)
         {
             listeners[i].OnEventRaised(sender, data);
         }
