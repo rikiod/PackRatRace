@@ -25,11 +25,11 @@ public class spawnBox : MonoBehaviour
     {
         if (sendBox)
         {
-            if (0 <= counter && counter <= 119){
+            if (0 <= counter && counter <= 129){
                 counter += 1;
                 //wait
             }
-            else if (120 <= counter && counter <= (120 + duration)){
+            else if (130 <= counter && counter <= (130 + duration)){
                 newBox.transform.position -= transform.forward * speed * Time.fixedDeltaTime;
                 counter += 1;
             }
@@ -42,7 +42,7 @@ public class spawnBox : MonoBehaviour
 
     public void spawnABox()
     {
-        newBox = Instantiate(boxItem, transform.position, Quaternion.identity);
+        newBox = Instantiate(boxItem, transform.position, Quaternion.Euler(0, 90, 0));
         newBox.transform.parent = transform;
         sendBox = true;
     }

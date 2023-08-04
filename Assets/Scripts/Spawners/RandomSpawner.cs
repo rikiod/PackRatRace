@@ -24,6 +24,7 @@ public class RandomSpawner : MonoBehaviour
 
     public void Spawn(GameObject spawnItem)
     {
+
         GameObject newSpawnedObject = Instantiate(spawnItem, transform.position, Quaternion.identity);
         newSpawnedObject.GetComponent<Rigidbody>().velocity = transform.forward * initialSpeed;
         newSpawnedObject.transform.parent = transform;
