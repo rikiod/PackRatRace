@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1762028319409686871}
+  - component: {fileID: 3191116278272513586}
   m_Layer: 0
   m_Name: LightFixture
   m_TagString: Untagged
@@ -23,6 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762028319409686870}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.618, y: 1.599, z: 0.598}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,8 +33,29 @@ Transform:
   - {fileID: 1762028320498484582}
   - {fileID: 2303945350163126188}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3191116278272513586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762028319409686870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30fbc261878e435479e780897f9abf91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lamp: {fileID: 1762028320498484583}
+  minFlickerTime: 1
+  maxFlickerTime: 20
+  minDimDuration: 0.2
+  maxDimDuration: 3
+  minOffDuration: 0.05
+  maxOffDuration: 0.3
+  onLevel: 1
+  dimLevel: 0.8
+  offLevel: 0
 --- !u!1 &1762028320498484585
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,13 +80,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762028320498484585}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.32575, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1762028319409686871}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1762028320498484583
 Light:
@@ -132,6 +155,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1762028319409686871}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 6411b544e725c144fa3299cb6e9e54f9, type: 3}
@@ -203,6 +227,9 @@ PrefabInstance:
       value: light_fixture
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6411b544e725c144fa3299cb6e9e54f9, type: 3}
 --- !u!4 &2303945350163126188 stripped
 Transform:

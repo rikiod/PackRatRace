@@ -79,6 +79,7 @@ public class catMovement : MonoBehaviour
         bool randomBool = Random.value > 0.5f;
         if (randomBool) {
             transform.position = bopStartingPoint;
+            transform.eulerAngles = watchingAngle;
             isMoving = 1;
         }
         else {
