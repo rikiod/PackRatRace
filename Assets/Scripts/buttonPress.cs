@@ -26,7 +26,7 @@ public class buttonPress : MonoBehaviour
     {
         if (!isPressed)
         {
-            button.transform.localPosition -= button.transform.right * 1/20;
+            button.transform.position -= button.transform.right * 1/50;
             pusher = other.gameObject;
             onPress.Invoke();
             isPressed = true;
@@ -37,8 +37,8 @@ public class buttonPress : MonoBehaviour
     {
         if (pusher == other.gameObject)
         {
-            button.transform.localPosition += button.transform.right * 1/20;
-            onPress.Invoke();
+            button.transform.position += button.transform.right * 1/50;
+            onRelease.Invoke();
             isPressed = false;
         }
     }

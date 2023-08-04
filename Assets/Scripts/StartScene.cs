@@ -5,31 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class StartScene : MonoBehaviour
 {
-
     // make sure sprite is clickable / has collider 
     [SerializeField] string sceneName = "Level1";
 
-    private void OnTriggerEnter(Collider other) {
-        LoadScene();
-    }
-    // private void OnMouseDown() {
-    //     print("hi");
-    //     LoadScene();
-    // }
-
-    private void LoadScene() {
+    public void LoadScene() {
+        print("loaded level 1 scene");
         SceneManager.LoadScene(sceneName);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        print("start");
-    }
-
-    // // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
 }

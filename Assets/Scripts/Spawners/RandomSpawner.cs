@@ -24,9 +24,10 @@ public class RandomSpawner : MonoBehaviour
 
     public void Spawn(GameObject spawnItem)
     {
-        GameObject newSpawnedObject = Instantiate(spawnItem, transform.position, Quaternion.identity);
+        GameObject newSpawnedObject = Instantiate(spawnItem, transform.position + new Vector3(0,1,0), Quaternion.identity);
         newSpawnedObject.GetComponent<Rigidbody>().velocity = transform.forward * initialSpeed;
         newSpawnedObject.transform.parent = transform;
+        newSpawnedObject.GetComponent<Rigidbody>().position = transform.position;
     }
 
     int GetRandomNumber(int minValue, int maxValue)
