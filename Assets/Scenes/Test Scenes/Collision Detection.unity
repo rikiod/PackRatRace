@@ -155,6 +155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebdba1e1e8980f048b605fc783b8b066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToDetect:
+  - Food1
+  - Food2
+  - Food3
+  - Food4
   OnCollision: {fileID: 11400000, guid: 14f695c528b380e4b815e01d021d6448, type: 2}
 --- !u!23 &453344715
 MeshRenderer:
@@ -215,7 +220,7 @@ Transform:
   m_GameObject: {fileID: 453344712}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.30207777, y: -0.07, z: 0.12644005}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -349,7 +354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6801728494696980142, guid: 49e40acc4481b494b97770e836eb6d05, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5710614
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6801728494696980142, guid: 49e40acc4481b494b97770e836eb6d05, type: 3}
       propertyPath: m_LocalPosition.y
@@ -357,7 +362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6801728494696980142, guid: 49e40acc4481b494b97770e836eb6d05, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.25290036
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6801728494696980142, guid: 49e40acc4481b494b97770e836eb6d05, type: 3}
       propertyPath: m_LocalRotation.w
@@ -420,7 +425,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0.95686275, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -634,6 +639,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnCollision: {fileID: 0}
+--- !u!1 &796984575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796984576}
+  - component: {fileID: 796984577}
+  - component: {fileID: 796984578}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &796984576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796984575}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &796984577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796984575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8076e3d1ee54e4419887eec0015f937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCollision: {fileID: 11400000, guid: 14f695c528b380e4b815e01d021d6448, type: 2}
+  spawnItem: {fileID: 5499134704490057263, guid: 16602b51d63705848867202dd5dc0847, type: 3}
+  targetItem: {fileID: 7082774424390989250, guid: 55bc88d221e3d0d45b2975c66f8a72a7, type: 3}
+--- !u!114 &796984578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796984575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e521ded614f2f540910f7949dd3980d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvents: {fileID: 11400000, guid: 14f695c528b380e4b815e01d021d6448, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 796984577}
+        m_TargetAssemblyTypeName: ClosedBoxSpawner, Assembly-CSharp
+        m_MethodName: OnCollisionWithFood
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &984573694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -648,7 +729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6011672162164702319, guid: 163d1ebe04ab93442b1790910041b5d7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.27462864
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6011672162164702319, guid: 163d1ebe04ab93442b1790910041b5d7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -656,7 +737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6011672162164702319, guid: 163d1ebe04ab93442b1790910041b5d7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.8604634
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6011672162164702319, guid: 163d1ebe04ab93442b1790910041b5d7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -701,7 +782,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1078148183888099114, guid: 55bc88d221e3d0d45b2975c66f8a72a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.3953898
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1078148183888099114, guid: 55bc88d221e3d0d45b2975c66f8a72a7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -709,7 +790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1078148183888099114, guid: 55bc88d221e3d0d45b2975c66f8a72a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.13975716
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1078148183888099114, guid: 55bc88d221e3d0d45b2975c66f8a72a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -831,7 +912,7 @@ Transform:
   m_GameObject: {fileID: 1972239376}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.30207777, y: -0.54624796, z: 0.12644005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -898,3 +979,4 @@ SceneRoots:
   - {fileID: 984573694}
   - {fileID: 522559999}
   - {fileID: 619321785}
+  - {fileID: 796984576}

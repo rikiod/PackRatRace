@@ -5,12 +5,18 @@ using UnityEngine;
 
 public class CheckCollision : MonoBehaviour
 {
+    public List<string> objectToDetect = new List<string>();
     [Header("Events")]
     public GameEvents OnCollision;
     public void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other.gameObject.name);
-        OnCollision.Raise(this, other.gameObject.name);
+        if (objectToDetect.Contains(other.gameObject.name))
+        {
+/*            Debug.Log(other.gameObject.name);*/
+            OnCollision.Raise(this, other.gameObject.name);
+            Destroy(other.gameObject);
+        }
+
     }
 
 }

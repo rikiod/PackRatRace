@@ -19,14 +19,6 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void OnCollisionWithFood(Component sender, object data)
     {
-        if (data == "Food1")
-        {
-            Destroy(this);
-            Debug.Log("Food 1 detected");
-        }
-        else
-        {
-            Debug.Log(data + " detected");
-        }
+
     }
 }
