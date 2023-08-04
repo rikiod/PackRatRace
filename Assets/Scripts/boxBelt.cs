@@ -24,11 +24,11 @@ public class boxBelt : MonoBehaviour
     {
         if (move)
         {
-            if (0 <= counter && counter <= 119){
+            if (0 <= counter && counter <= 129){
                 counter += 1;
                 //wait
             }
-            else if (120 <= counter && counter <= (120 + duration)){
+            else if (130 <= counter && counter <= (130 + duration)){
                 texture.mainTextureOffset -= new Vector2(0,1) * speed * Time.fixedDeltaTime;
                 counter += 1;
             }

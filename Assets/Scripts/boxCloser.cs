@@ -25,12 +25,16 @@ public class boxCloser : MonoBehaviour
                 transform.position -= transform.up * speed * Time.fixedDeltaTime /100;
                 counter += 1;
             }
-            else if (60 <= counter && counter <= 119)
+            else if (60 <= counter && counter <= 69)
+            {
+                counter += 1;
+            }
+            else if (70 <= counter && counter <= 129)
             {
                 transform.position += transform.up * speed * Time.fixedDeltaTime /100;
                 counter += 1;
             }
-            else if (counter >=120)
+            else if (counter >=130)
             {
                 moveMachine = false;
                 counter = 0;
