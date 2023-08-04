@@ -326,8 +326,8 @@ MonoBehaviour:
   point1: {x: -10, y: 0, z: 0.2}
   point2: {x: -1.3, y: 0, z: 0.2}
   speed: 1
-  dialogue1Time: 2
-  textWaitTime: 3
+  dialogue1Time: 1
+  textWaitTime: 5
 --- !u!65 &53369957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -485,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99fed78bac8572a47ae27ac375301cb7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5
+      value: 4.52
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99fed78bac8572a47ae27ac375301cb7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2871,11 +2871,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e0a0802e5a9416f8f857b290f4f31b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingPoint: {x: -0.25, y: 0, z: -2}
-  targetPoint: {x: -0.25, y: -2, z: -2}
+  bopStartingPoint: {x: -0.25, y: -2, z: -2}
+  walkStartingPoint: {x: -3.6, y: 0, z: -2}
+  TargetPoint: {x: -0.25, y: 0, z: -2}
   speed: 1
+  minActionTime: 3
+  maxActionTime: 5
   minWaitTime: 1
   maxWaitTime: 2
+  watchingAngle: {x: 0, y: 0, z: 0}
+  enterAngle: {x: 0, y: 90, z: 0}
+  returnAngle: {x: 0, y: 270, z: 0}
+  spinSpeed: -30
 --- !u!1 &986431898
 GameObject:
   m_ObjectHideFlags: 0
@@ -4644,11 +4651,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e0a0802e5a9416f8f857b290f4f31b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingPoint: {x: -1.6, y: 0, z: 1.5}
-  targetPoint: {x: -1.6, y: 0, z: 0.5}
+  bopStartingPoint: {x: 0, y: 0, z: 0}
+  walkStartingPoint: {x: 0, y: 0, z: 0}
+  TargetPoint: {x: 0, y: 0, z: 0}
   speed: 2
+  minActionTime: 10
+  maxActionTime: 30
   minWaitTime: 1
   maxWaitTime: 2
+  watchingAngle: {x: 0, y: 0, z: 0}
+  enterAngle: {x: 0, y: 0, z: 0}
+  returnAngle: {x: 0, y: 0, z: 0}
+  spinSpeed: 0
 --- !u!4 &1606865499 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 99fed78bac8572a47ae27ac375301cb7, type: 3}
@@ -4661,17 +4675,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606865497}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc808c19ad219cb4ab0884157eb6af80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: {fileID: 0}
-  hidingPoint: {x: 0, y: 0, z: 0}
-  point1: {x: 0, y: 0, z: 0}
+  Text: {fileID: 146925819}
+  hidingPoint: {x: -1.6, y: 0, z: 1.5}
+  point1: {x: -1.6, y: 0, z: 0.5}
   point2: {x: 0, y: 0, z: 0}
-  speed: 1
-  dialogue1Time: 12
+  speed: 2
+  dialogue1Time: 3
   textWaitTime: 3
 --- !u!1 &1630321513
 GameObject:
@@ -5021,7 +5035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2310d5ab59929c04e97c435f0148d70a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.25
+      value: 2.63
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2310d5ab59929c04e97c435f0148d70a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5041,11 +5055,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2310d5ab59929c04e97c435f0148d70a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2310d5ab59929c04e97c435f0148d70a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2310d5ab59929c04e97c435f0148d70a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5104,7 +5118,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876354301}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.2}
+  m_LocalPosition: {x: 0, y: 0, z: 2.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5113,7 +5127,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.9, y: 3.46}
+  m_AnchoredPosition: {x: 1.97, y: 3.46}
   m_SizeDelta: {x: 2.4, y: 1.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1876354303
@@ -5159,7 +5173,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b389f3049f98dd445a77410b827d6292, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.4, y: 1.8}

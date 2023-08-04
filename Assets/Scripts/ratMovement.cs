@@ -39,64 +39,49 @@ public class ratMovement : MonoBehaviour
 
         if (isMoving == 1) {
             transform.position = Vector3.MoveTowards(transform.position, hidingPoint, Time.deltaTime * speed);
-            if (transform.position == hidingPoint && directionn) {
-                isMoving = 2;
-            }
-            else if (transform.position == hidingPoint && !directionn) {
+            if (transform.position == hidingPoint) {
                 isMoving = 0;
-                directionn = true;
-                goPlease = true;
             }
         }
 
         else if (isMoving == 2) {
             // move towards pt 1
             transform.position = Vector3.MoveTowards(transform.position, point1, Time.deltaTime * speed);
-            if (transform.position == point1 && directionn) {
-                isMoving = 3;
-            }
-            else if (transform.position == point1 && !directionn) {
-                isMoving = 1;
-            }
-        }
-
-        else if (isMoving == 3){
-            transform.position = Vector3.MoveTowards(transform.position, point2, Time.deltaTime * speed);
-            if (transform.position == point2) {
+            if (transform.position == point1) {
                 StartCoroutine(Dialogue());
-                isMoving = 4;
+                isMoving = 0;
             }
         }
         
     }
 
     IEnumerator WaitThenChangeDirection() {
-        if (goPlease){
+        //if (goPlease){
            yield return new WaitForSeconds(dialogue1Time);
-            isMoving = 1;
-            directionn = true;
-            goPlease = false;
+            isMoving = 2;
+            //directionn = true;
+            //goPlease = false;
 
             //yield return new WaitForSeconds(dialogue1Time);
             //isMoving = 1; 
-        }
+        //}
 
     }
         IEnumerator Dialogue() {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(0.5f);
             
             GameObject textBox = transform.Find("TextBox").gameObject;
-            Text.text = "Miau miau miau miau miau (etc etc)";
+            Text.text = "pls dont eat me the boss is rly scary";
             textBox.SetActive(true);
             yield return new WaitForSeconds(textWaitTime);
 
-            Text.text = "Miau Miau, i have more things to say miau";
+            Text.text = "im so scared i gotta go back now aaaah";
             yield return new WaitForSeconds(textWaitTime);
 
             textBox.SetActive(false);
-            yield return new WaitForSeconds(1);
-            directionn = false;
-            isMoving = 2;            
+            yield return new WaitForSeconds(0.5f);
+            //directionn = false;
+            isMoving = 1;            
         
     }
 }

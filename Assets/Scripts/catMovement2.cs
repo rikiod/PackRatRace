@@ -15,7 +15,7 @@ public class catMovement2 : MonoBehaviour
     [SerializeField] float textWaitTime = 3;
     float isMoving = 0;
     bool directionn = true; // true = walk towards door. false = walk away from door
-    bool goPlease = true;
+    
     
 
     // Start is called before the first frame update
@@ -45,7 +45,6 @@ public class catMovement2 : MonoBehaviour
             else if (transform.position == hidingPoint && !directionn) {
                 isMoving = 0;
                 directionn = true;
-                goPlease = true;
             }
         }
 
@@ -71,15 +70,9 @@ public class catMovement2 : MonoBehaviour
     }
 
     IEnumerator WaitThenChangeDirection() {
-        if (goPlease){
            yield return new WaitForSeconds(dialogue1Time);
             isMoving = 1;
             directionn = true;
-            goPlease = false;
-
-            //yield return new WaitForSeconds(dialogue1Time);
-            //isMoving = 1; 
-        }
 
     }
         IEnumerator Dialogue() {
