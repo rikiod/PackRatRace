@@ -9,10 +9,13 @@ public class LevelController : MonoBehaviour
     public List<string> objects = new List<string>();
     public int noOfBoxes = new int();
     public int inputNumber = new int();
-    public GameEvents BoxOrder;
+    public GameEvents Food1OrderUpdate;
+    public GameEvents Food2OrderUpdate;
+    public GameEvents Food3OrderUpdate;
+    public GameEvents Food4OrderUpdate;
 
     [SerializeField]
-    private List<Dictionary<string, object>> listOfLevelRequirements = new List<Dictionary<string, object>>();
+    private List<Dictionary<string, int>> listOfLevelRequirements = new List<Dictionary<string, int>>();
     [SerializeField]
     private int levelCounter = 0;
 
@@ -22,7 +25,7 @@ public class LevelController : MonoBehaviour
         int noOfObjects = objects.Count;
         for (int boxNo = 0; boxNo < noOfBoxes; boxNo++)
         {
-            Dictionary<string, object> levelObjectives = new Dictionary<string, object>();
+            Dictionary<string, int> levelObjectives = new Dictionary<string, int>();
             List<int> splitNumbers = RandomDistribution(inputNumber, noOfObjects);
             for (int i = 0; i < noOfObjects; i++)
             {
@@ -31,12 +34,22 @@ public class LevelController : MonoBehaviour
             }
             listOfLevelRequirements.Add(levelObjectives);
         }
+        broadcastBoxOrder(listOfLevelRequirements, levelCounter);
+        levelCounter++;
     }
 
     public void BoxPacked(Component sender, object data)
     {
+        broadcastBoxOrder(listOfLevelRequirements, levelCounter);
         levelCounter++;
-        BoxOrder.Raise(this, listOfLevelRequirements[levelCounter]);
+    }
+
+    void broadcastBoxOrder(List<Dictionary<string, int>> listOfLevelRequirements, int levelCounter)
+    {
+        Food1OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Food1"].ToString());
+        Food2OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Food2"].ToString());
+        Food3OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Food3"].ToString());
+        Food4OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Food4"].ToString());
     }
 
     public List<int> RandomDistribution(int originalNumber, int arraySize)

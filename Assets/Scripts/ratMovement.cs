@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//Two boxes completed: call D2
+//Four boxes completed: call D3
+
+
 public class ratMovement : MonoBehaviour
 {
     public TextMeshPro Text;
     [SerializeField] Vector3 hidingPoint;
     [SerializeField] Vector3 point1;
-    [SerializeField] Vector3 point2;
-    [SerializeField] float speed = 1; 
-    [SerializeField] float dialogue1Time = 12f;
+    //[SerializeField] Vector3 point2;
+    [SerializeField] float speed = 2f; 
+    //[SerializeField] float dialogue1Time = 12f;
     //[SerializeField] float dialogue2Time = 12f;
-    [SerializeField] float textWaitTime = 3;
+    [SerializeField] float textWaitTime = 4f;
     float isMoving = 0;
-    bool directionn = true; // true = walk towards door. false = walk away from door
-    bool goPlease = true;
+    //bool directionn = true; // true = walk towards door. false = walk away from door
+    //bool goPlease = true;
+    int dialogueNum = 1;
     
 
     // Start is called before the first frame update
@@ -26,7 +31,6 @@ public class ratMovement : MonoBehaviour
         GameObject textBox = transform.Find("TextBox").gameObject;
         textBox.SetActive(false);
 
-        StartCoroutine(WaitThenChangeDirection());
         transform.position = hidingPoint;
         
     }
@@ -37,52 +41,65 @@ public class ratMovement : MonoBehaviour
         //Text.text = "Miau miau miau miau miau (etc. etc.)";
 
 
-        if (isMoving == 1) {
+        if (isMoving == 1) { //Move to hiding point
             transform.position = Vector3.MoveTowards(transform.position, hidingPoint, Time.deltaTime * speed);
             if (transform.position == hidingPoint) {
                 isMoving = 0;
             }
         }
 
-        else if (isMoving == 2) {
-            // move towards pt 1
+        else if (isMoving == 2) { // move towards door
             transform.position = Vector3.MoveTowards(transform.position, point1, Time.deltaTime * speed);
             if (transform.position == point1) {
-                StartCoroutine(Dialogue());
+                StartCoroutine(Dialogue(dialogueNum));
                 isMoving = 0;
             }
         }
         
     }
 
-    IEnumerator WaitThenChangeDirection() {
-        //if (goPlease){
-           yield return new WaitForSeconds(dialogue1Time);
-            isMoving = 2;
-            //directionn = true;
-            //goPlease = false;
 
-            //yield return new WaitForSeconds(dialogue1Time);
-            //isMoving = 1; 
-        //}
-
-    }
-        IEnumerator Dialogue() {
-            yield return new WaitForSeconds(0.5f);
-            
-            GameObject textBox = transform.Find("TextBox").gameObject;
-            Text.text = "pls dont eat me the boss is rly scary";
-            textBox.SetActive(true);
-            yield return new WaitForSeconds(textWaitTime);
-
-            Text.text = "im so scared i gotta go back now aaaah";
-            yield return new WaitForSeconds(textWaitTime);
-
-            textBox.SetActive(false);
-            yield return new WaitForSeconds(0.5f);
-            //directionn = false;
-            isMoving = 1;            
+    IEnumerator Dialogue(int num) {
+        yield return new WaitForSeconds(0.5f);
         
+        GameObject textBox = transform.Find("TextBox").gameObject;
+        textBox.SetActive(true);
+
+        if (num == 1) {
+            Text.text = "Hey man! I'm always happy to see new guys around here, a lot of folks don't last very long.";
+            yield return new WaitForSeconds(textWaitTime);
+
+            Text.text = "Feel free to ask me anything if you need it, I'm just next door!";
+            yield return new WaitForSeconds(textWaitTime);
+
+        }
+
+        else if (num == 2) {
+            Text.text = "Did The Manager Pat come to talk to you?";
+            yield return new WaitForSeconds(textWaitTime);
+
+            Text.text = "He sounds harsh, but he's all hiss and no bite.";
+            yield return new WaitForSeconds(textWaitTime);
+
+            Text.text = "Don't worry about him too much.";
+            yield return new WaitForSeconds(textWaitTime);
+
+        }
+
+        textBox.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        isMoving = 1;            
+        
+    }
+
+    public void D1() {
+        dialogueNum = 1;
+        isMoving = 2;
+    }
+
+    public void D2() {
+        dialogueNum = 2;
+        isMoving = 2;
     }
 }
 
