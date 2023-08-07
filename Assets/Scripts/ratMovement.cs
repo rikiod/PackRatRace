@@ -9,6 +9,7 @@ using TMPro;
 
 public class ratMovement : MonoBehaviour
 {
+    public AudioSource audioSource;
     public TextMeshPro Text;
     [SerializeField] Vector3 hidingPoint;
     [SerializeField] Vector3 point1;
@@ -67,21 +68,25 @@ public class ratMovement : MonoBehaviour
 
         if (num == 1) {
             Text.text = "Hey man! I'm always happy to see new guys around here, a lot of folks don't last very long.";
+            audioSource.Play();
             yield return new WaitForSeconds(textWaitTime);
 
             Text.text = "Feel free to ask me anything if you need it, I'm just next door!";
+            audioSource.Play();
             yield return new WaitForSeconds(textWaitTime);
 
         }
 
         else if (num == 2) {
             Text.text = "Did The Manager Pat come to talk to you?";
+            audioSource.Play();
             yield return new WaitForSeconds(textWaitTime);
 
             Text.text = "He sounds harsh, but he's all hiss and no bite.";
             yield return new WaitForSeconds(textWaitTime);
 
             Text.text = "Don't worry about him too much.";
+            audioSource.Play();
             yield return new WaitForSeconds(textWaitTime);
 
         }
