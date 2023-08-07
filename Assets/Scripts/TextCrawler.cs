@@ -11,6 +11,6 @@ public class TextCrawler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Camera.main.transform.up * _scrollSpeed * Time.deltaTime);
+        transform.Translate(transform.up * _scrollSpeed * Time.deltaTime);
     }
 }

@@ -13,10 +13,10 @@ public class ScreenController : MonoBehaviour
     public SpriteRenderer num2;
     public SpriteRenderer num3;
     public SpriteRenderer num4;
-    public SpriteRenderer x1;
-    public SpriteRenderer x2;
-    public SpriteRenderer x3;
-    public SpriteRenderer x4;
+    // public SpriteRenderer x1;
+    // public SpriteRenderer x2;
+    // public SpriteRenderer x3;
+    // public SpriteRenderer x4;
     public SpriteRenderer item1;
     public SpriteRenderer item2;
     public SpriteRenderer item3;
@@ -25,6 +25,7 @@ public class ScreenController : MonoBehaviour
 
     public Sprite bullet;
     public Sprite bulletCheck;
+    public Sprite sp_zero;
     public Sprite sp_one;
     public Sprite sp_two;
     public Sprite sp_three;
@@ -99,28 +100,38 @@ public class ScreenController : MonoBehaviour
     void Reset() {
         bigThing.enabled = false;
         
-        check1.enabled = true;
-        check2.enabled = true;
-        check3.enabled = true;
-        check4.enabled = true;
+        // check1.enabled = false;
+        // check2.enabled = false;
+        // check3.enabled = false;
+        // check4.enabled = false;
 
         check1.sprite = bullet;
         check2.sprite = bullet;
         check3.sprite = bullet;
         check4.sprite = bullet;
 
-        num1.enabled = false;
-        num2.enabled = false;
-        num3.enabled = false;
-        num4.enabled = false;
-        x1.enabled = false;
-        x2.enabled = false;
-        x3.enabled = false;
-        x4.enabled = false;
-        item1.enabled = false;
-        item2.enabled = false;
-        item3.enabled = false;
-        item4.enabled = false;
+        // num1.enabled = false;
+        // num2.enabled = false;
+        // num3.enabled = false;
+        // num4.enabled = false;
+        // // x1.enabled = false;
+        // // x2.enabled = false;
+        // // x3.enabled = false;
+        // // x4.enabled = false;
+        // item1.enabled = false;
+        // item2.enabled = false;
+        // item3.enabled = false;
+        // item4.enabled = false;
+
+        item1.color = Color.grey;
+        item2.color = Color.grey;
+        item3.color = Color.grey;
+        item4.color = Color.grey;
+
+        num1.sprite = sp_zero;
+        num2.sprite = sp_zero;
+        num3.sprite = sp_zero;
+        num4.sprite = sp_zero;
 
     }
     private void Food1Order(int quantity) {
@@ -131,9 +142,11 @@ public class ScreenController : MonoBehaviour
         
         if (quantity != 0) {
 
-            num1.enabled = true;
-            x1.enabled = true;
-            item1.enabled = true;
+            //num1.enabled = true;
+            //x1.enabled = true;
+            //item1.enabled = true;
+            item1.color = Color.white;
+            //check1.enabled = true;
             
             if (quantity == 1) {
                 num1.sprite = sp_one;
@@ -157,9 +170,8 @@ public class ScreenController : MonoBehaviour
         
         if (quantity != 0) {
 
-            num2.enabled = true;
-            x2.enabled = true;
-            item2.enabled = true;
+            item2.color = Color.white;
+            //check2.enabled = true;
             
             if (quantity == 1) {
                 num2.sprite = sp_one;
@@ -183,9 +195,8 @@ public class ScreenController : MonoBehaviour
         
         if (quantity != 0) {
 
-            num3.enabled = true;
-            x3.enabled = true;
-            item3.enabled = true;
+            item3.color = Color.white;
+            //check3.enabled = true;
             
             if (quantity == 1) {
                 num3.sprite = sp_one;
@@ -209,9 +220,8 @@ public class ScreenController : MonoBehaviour
         
         if (quantity != 0) {
 
-            num4.enabled = true;
-            x4.enabled = true;
-            item4.enabled = true;
+            item4.color = Color.white;
+            //check4.enabled = true;
             
             if (quantity == 1) {
                 num4.sprite = sp_one;

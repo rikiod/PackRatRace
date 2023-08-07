@@ -135,10 +135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TV
       objectReference: {fileID: 0}
-    - target: {fileID: 1674401864206211977, guid: 4672bf147f972904e84494612f8370e1, type: 3}
-      propertyPath: BoxOrder
-      value: 
-      objectReference: {fileID: 11400000, guid: 37992affbadc62048aef2b4e17c47576, type: 2}
     - target: {fileID: 4463332512922609872, guid: 4672bf147f972904e84494612f8370e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -182,19 +178,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1180407361071583072, guid: 4672bf147f972904e84494612f8370e1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1855480896}
-    - targetCorrespondingSourceObject: {fileID: 1180407361071583072, guid: 4672bf147f972904e84494612f8370e1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1855480904}
-    - targetCorrespondingSourceObject: {fileID: 1180407361071583072, guid: 4672bf147f972904e84494612f8370e1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1855480903}
-    - targetCorrespondingSourceObject: {fileID: 1180407361071583072, guid: 4672bf147f972904e84494612f8370e1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1855480902}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4672bf147f972904e84494612f8370e1, type: 3}
 --- !u!1 &723190783
 GameObject:
@@ -438,134 +422,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1855480890 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1180407361071583072, guid: 4672bf147f972904e84494612f8370e1, type: 3}
-  m_PrefabInstance: {fileID: 66960202}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1855480896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855480890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e521ded614f2f540910f7949dd3980d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents: {fileID: 11400000, guid: 3c98e4ad20171974e9be2d3766abdc04, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1855480898}
-        m_TargetAssemblyTypeName: ScreenController, Assembly-CSharp
-        m_MethodName: Food1OrderUpdate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1855480898 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1674401864206211977, guid: 4672bf147f972904e84494612f8370e1, type: 3}
-  m_PrefabInstance: {fileID: 66960202}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855480890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8a59d00870229643ab52be7c33fddaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1855480902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855480890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e521ded614f2f540910f7949dd3980d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents: {fileID: 11400000, guid: 22e3dba25eee8254e8144631461c97ee, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1855480898}
-        m_TargetAssemblyTypeName: ScreenController, Assembly-CSharp
-        m_MethodName: Food4OrderUpdate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1855480903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855480890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e521ded614f2f540910f7949dd3980d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents: {fileID: 11400000, guid: 8439314005a40964aa3983104866f40f, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1855480898}
-        m_TargetAssemblyTypeName: ScreenController, Assembly-CSharp
-        m_MethodName: Food3OrderUpdate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1855480904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855480890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e521ded614f2f540910f7949dd3980d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents: {fileID: 11400000, guid: d3d1b95158de6db4097b16ad9ee58c8d, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1855480898}
-        m_TargetAssemblyTypeName: ScreenController, Assembly-CSharp
-        m_MethodName: Food2OrderUpdate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

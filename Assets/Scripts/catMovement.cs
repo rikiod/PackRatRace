@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Cat Window movement
+
+
 public class catMovement : MonoBehaviour
 {
     [SerializeField] Vector3 bopStartingPoint;
     [SerializeField] Vector3 walkStartingPoint;
     [SerializeField] Vector3 TargetPoint;
-    [SerializeField] float speed = 1; 
+    [SerializeField] float speed = 1f; 
     [SerializeField] float minActionTime = 10f;
     [SerializeField] float maxActionTime = 30f;
     [SerializeField] float minWaitTime = 3f;
@@ -15,15 +19,15 @@ public class catMovement : MonoBehaviour
     [SerializeField] Vector3 watchingAngle;
     [SerializeField] Vector3 enterAngle;
     [SerializeField] Vector3 returnAngle;
-    [SerializeField] float spinSpeed;
-    float isMoving = 0;    
+    [SerializeField] float spinSpeed = -10f;
+    float isMoving = 0;  
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = bopStartingPoint;
-        transform.eulerAngles = watchingAngle;
-        StartCoroutine(ActionInitiation());
+        
+        StopMovement();
         
     }
 
@@ -107,16 +111,29 @@ public class catMovement : MonoBehaviour
     }
 
     IEnumerator Spinning() {
-        
         float spinTime = -90 / spinSpeed;
         yield return new WaitForSeconds(spinTime);
-
+        
         if (isMoving == 5) {
             StartCoroutine(WatchingYou());
         }
         else { // isMoving == 6
             isMoving = 4;
         }
+    }
+
+    public void StartMovement() {
+
+        StartCoroutine(ActionInitiation());
+
+    }
+
+    public void StopMovement() {
+
+        isMoving = 0;
+        transform.position = bopStartingPoint;
+        transform.eulerAngles = watchingAngle;
+
     }
 }
 
