@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class StartScene : MonoBehaviour
 {
     // make sure sprite is clickable / has collider 
-    [SerializeField] string sceneName = "Level1";
+    //[SerializeField] string sceneName = "TextIntro";
 
     public void LoadScene() {
-        print("loaded level 1 scene");
-        SceneManager.LoadScene(sceneName);
+        print("loaded next scene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }
