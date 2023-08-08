@@ -42,8 +42,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6801728494696980142}
-  - component: {fileID: 5446510462736330512}
   - component: {fileID: -6255776947597967850}
+  - component: {fileID: 794417829862830166}
   m_Layer: 0
   m_Name: Food4
   m_TagString: Untagged
@@ -60,14 +60,27 @@ Transform:
   m_GameObject: {fileID: 416948170358398462}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.67736083, y: -0.00000011920929, z: 0.6716384}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 658216201434623794}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &5446510462736330512
+--- !u!114 &-6255776947597967850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416948170358398462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86f90d7cce389f4395c53bdf78b6f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitTime: 20
+--- !u!54 &794417829862830166
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,19 +107,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-6255776947597967850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416948170358398462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f86f90d7cce389f4395c53bdf78b6f38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 20
 --- !u!1 &1056319894456455729
 GameObject:
   m_ObjectHideFlags: 0

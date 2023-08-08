@@ -43,7 +43,7 @@ public class spawnBox : MonoBehaviour
     public void spawnABox()
     {
         newBox = Instantiate(boxItem, transform.position, Quaternion.Euler(0, 90, 0));
-        newBox.transform.parent = transform;
         sendBox = true;
+        newBox.name = boxItem.name;
     }
 }

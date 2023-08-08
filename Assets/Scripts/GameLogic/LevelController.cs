@@ -2,22 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelController : MonoBehaviour
+//no need to implement listener for onBoxPacked. It is automatically called at the end of scan completed
+//need to implement listener for detectScanCompleted which causes controller to broadcast which objectives are correct and then cycle to onBoxPacked
+//need to implement 4 listeners for getting the input of the objects added
+public class LevelController : MonoBehaviour 
 {
     //Level Controller stores and broadcast the orders
     private System.Random random = new System.Random();
     public List<string> objects = new List<string>();
     public int noOfBoxes = new int();
     public int inputNumber = new int();
+
+    [Header("Events")] //these gameEvents are for broadcasting the current order
     public GameEvents Food1OrderUpdate;
     public GameEvents Food2OrderUpdate;
     public GameEvents Food3OrderUpdate;
     public GameEvents Food4OrderUpdate;
+    public GameEvents currentBox; // implement this broadcast
+
+    [Header("Events")] 
+    public List<GameEvents> gameEvents = new List<GameEvents>(); //List of gameEvents in same sequence as the objects list
+    public Dictionary<string, GameEvents> objectToDetectAndBroadcast = new Dictionary<string, GameEvents>(); //Creates a dictionary with gameEvents and objects list
+
+    private List<Dictionary<string, int>> listOfLevelRequirements = new List<Dictionary<string, int>>();
+    private Dictionary<string, int> input = new Dictionary<string, int>();
 
     [SerializeField]
-    private List<Dictionary<string, int>> listOfLevelRequirements = new List<Dictionary<string, int>>();
-    [SerializeField]
     private int levelCounter = 0;
+    [SerializeField]
+    private bool correctOrder;
+    [SerializeField]
+    private bool scanCompletedBool = false;
+    public GameEvents orderCorrect; // broadcast if input for orders are correct
 
     // Start is called before the first frame update
     void Start()
@@ -34,14 +50,33 @@ public class LevelController : MonoBehaviour
             }
             listOfLevelRequirements.Add(levelObjectives);
         }
-        broadcastBoxOrder(listOfLevelRequirements, levelCounter);
-        levelCounter++;
+
+        for (int i = 0; i < objects.Count; i++)
+        {
+            objectToDetectAndBroadcast[objects[i]] = gameEvents[i];
+        }
+        onBoxPacked();
     }
 
-    public void BoxPacked(Component sender, object data)
+    private void Update()
     {
+        if (scanCompletedBool)
+        {
+            Debug.Log(scanCompletedBool.ToString());
+            scanCompleted();
+            scanCompletedBool = false;
+        }
+    }
+
+    public void onBoxPacked()
+    {
+        for (int i = 0; i < objects.Count; i++)
+        {
+            input[objects[i]] = 0;
+        }
         broadcastBoxOrder(listOfLevelRequirements, levelCounter);
         levelCounter++;
+        currentBox.Raise(this, levelCounter);
     }
 
     void broadcastBoxOrder(List<Dictionary<string, int>> listOfLevelRequirements, int levelCounter)
@@ -50,6 +85,7 @@ public class LevelController : MonoBehaviour
         Food2OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Food2"].ToString());
         Food3OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Food3"].ToString());
         Food4OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Food4"].ToString());
+        currentBox.Raise(this, levelCounter);
     }
 
     public List<int> RandomDistribution(int originalNumber, int arraySize)
@@ -80,4 +116,47 @@ public class LevelController : MonoBehaviour
         return resultArray;
     }
 
+    public void Food1Detected(Component sender, object data)
+    {
+        input["Food1"] = int.Parse(data.ToString());
+    }
+    public void Food2Detected(Component sender, object data)
+    {
+        input["Food2"] = int.Parse(data.ToString());
+    }
+    public void Food3Detected(Component sender, object data)
+    {
+        input["Food3"] = int.Parse(data.ToString());
+    }
+    public void Food4Detected(Component sender, object data)
+    {
+        input["Food4"] = int.Parse(data.ToString());
+    }
+    public void detectScanCompleted(Component sender, object data)
+    {
+        scanCompletedBool = true;
+    }
+
+    public IEnumerator scanCompleted()
+    {
+        correctOrder = true;
+        foreach (KeyValuePair<string, int> kvp in listOfLevelRequirements[levelCounter])
+        {
+            if (kvp.Value == input[kvp.Key])
+            {
+                objectToDetectAndBroadcast[kvp.Key].Raise(this, true);
+            }
+            else
+            {
+                objectToDetectAndBroadcast[kvp.Key].Raise(this, false);
+                correctOrder = false;
+            }
+            yield return new WaitForSeconds(1);
+        }
+        orderCorrect.Raise(this, correctOrder);
+
+        yield return new WaitForSeconds(5);
+        onBoxPacked();
+    }
+        
 }

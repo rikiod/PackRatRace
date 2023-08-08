@@ -16,7 +16,9 @@ public class RandomSpawner : MonoBehaviour
     {
         if (Time.time > lastSpawnedTime + frequency)
         {
-            GameObject spawnItem = spawnItemList[GetRandomNumber(0, spawnItemList.Count)];
+            int num = GetRandomNumber(0, spawnItemList.Count);
+            Debug.Log(num);
+            GameObject spawnItem = spawnItemList[num];
             Spawn(spawnItem);
             lastSpawnedTime = Time.time;
         }
@@ -29,6 +31,7 @@ public class RandomSpawner : MonoBehaviour
         newSpawnedObject.GetComponent<Rigidbody>().velocity = transform.forward * initialSpeed;
         newSpawnedObject.transform.parent = transform;
         newSpawnedObject.GetComponent<Rigidbody>().position = transform.position;
+        newSpawnedObject.name = spawnItem.name;
     }
 
     int GetRandomNumber(int minValue, int maxValue)
