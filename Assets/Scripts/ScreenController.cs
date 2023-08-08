@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 using static UnityEngine.Rendering.PostProcessing.SubpixelMorphologicalAntialiasing;
 
 public class ScreenController : MonoBehaviour
@@ -34,14 +35,16 @@ public class ScreenController : MonoBehaviour
     public Sprite bigCheck;
     public Sprite bigX;
 
-    private bool Food1Update = false;
+    private bool FoodUpdate = false;
     private int Food1;
-    private bool Food2Update = false;
     private int Food2;
-    private bool Food3Update = false;
     private int Food3;
-    private bool Food4Update = false;
     private int Food4;
+
+    private bool Food1Complete;
+    private bool Food2Complete;
+    private bool Food3Complete;
+    private bool Food4Complete;
 
     // Start is called before the first frame update
     void Start()
@@ -51,50 +54,84 @@ public class ScreenController : MonoBehaviour
 
     void Update()
     {
-        if (Food1Update)
+        if (FoodUpdate)
         {
             Food1Order(Food1);
-            Food1Update = false;
-        }
-
-        if (Food2Update)
-        {
             Food2Order(Food2);
-            Food2Update = false;
-        }
-
-        if (Food3Update)
-        {
             Food3Order(Food3);
-            Food3Update = false;
+            Food4Order(Food4);
+            if (Food1Complete)
+            {
+                ItemComplete(1);
+            }
+            if (Food2Complete)
+            {
+                ItemComplete(2);
+            }
+            if (Food3Complete)
+            {
+                ItemComplete(3);
+            }
+            if (Food4Complete)
+            {
+                ItemComplete(4);
+            }
+            FoodUpdate = false;
         }
 
-        if (Food4Update)
-        {
-            Food4Order(Food4);
-            Food4Update = false;
-        }
     }
 
     public void Food1OrderUpdate(Component sender, object data)
     {
-        Food1Update = true;
+        FoodUpdate = true;
         Food1 = int.Parse(data.ToString());
     }
     public void Food2OrderUpdate(Component sender, object data)
     {
-        Food2Update = true;
+        FoodUpdate = true;
         Food2 = int.Parse(data.ToString());
     }
     public void Food3OrderUpdate(Component sender, object data)
     {
-        Food3Update = true;
+        FoodUpdate = true;
         Food3 = int.Parse(data.ToString());
     }
     public void Food4OrderUpdate(Component sender, object data)
     {
-        Food4Update = true;
+        FoodUpdate = true;
         Food4 = int.Parse(data.ToString());
+    }
+    private void Food1Update(Component sender, object data)
+    {
+        if (data is bool)
+        {
+            Food1Complete = (bool)data;
+        }
+        FoodUpdate = true;
+    }
+    private void Food2Update(Component sender, object data)
+    {
+        if (data is bool && (bool)data)
+        {
+            Food2Complete = (bool)data;
+        }
+        FoodUpdate = true;
+    }
+    private void Food3Update(Component sender, object data)
+    {
+        if (data is bool && (bool)data)
+        {
+            Food3Complete = (bool)data;
+        }
+        FoodUpdate = true;
+    }
+    private void Food4Update(Component sender, object data)
+    {
+        if (data is bool && (bool)data)
+        {
+            Food4Complete = (bool)data;
+        }
+        FoodUpdate = true;
     }
 
     void Reset() {
@@ -165,7 +202,6 @@ public class ScreenController : MonoBehaviour
             }
         }
     }
-
     private void Food2Order(int quantity) {
         
         if (quantity != 0) {
@@ -190,7 +226,6 @@ public class ScreenController : MonoBehaviour
             }
         }
     }
-
     private void Food3Order(int quantity) {
         
         if (quantity != 0) {
@@ -215,7 +250,6 @@ public class ScreenController : MonoBehaviour
             }
         }
     }
-
     private void Food4Order(int quantity) {
         
         if (quantity != 0) {

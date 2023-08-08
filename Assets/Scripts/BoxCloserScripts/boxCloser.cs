@@ -10,6 +10,9 @@ public class boxCloser : MonoBehaviour
     private bool moveMachine;
     private int counter;
     // Start is called before the first frame update
+
+    [Header("Events")]
+    public GameEvents startScanning;
     void Start()
     {
         moveMachine = false;
@@ -27,10 +30,12 @@ public class boxCloser : MonoBehaviour
             }
             else if (60 <= counter && counter <= 69)
             {
+                startScanning.Raise(this, true); // calls collision box to check for collisions
                 counter += 1;
             }
             else if (70 <= counter && counter <= 129)
             {
+                startScanning.Raise(this, false); // calls collision box to stop checking for collisions
                 transform.position += transform.up * speed * Time.fixedDeltaTime /100;
                 counter += 1;
             }

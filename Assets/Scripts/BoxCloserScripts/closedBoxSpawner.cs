@@ -2,19 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonoSpawner : MonoBehaviour
+public class closedBoxSpawner : MonoBehaviour
 {
-    public GameEvents OnCollision;
     public GameObject spawnItem;
-    public GameObject targetItem;
-
-    public void OnCollisionWithFood(Component sender, object data)
+    public void spawnBox(Component sender, object data)
     {
-        Debug.Log(data);
-        if (data.ToString() == targetItem.name)
-        {
-            Spawn();
-        }
+        Spawn();
     }
 
     public void Spawn()
@@ -22,5 +15,4 @@ public class MonoSpawner : MonoBehaviour
         GameObject newSpawnedObject = Instantiate(spawnItem, transform.position, Quaternion.identity);
         newSpawnedObject.transform.parent = transform;
     }
-
 }

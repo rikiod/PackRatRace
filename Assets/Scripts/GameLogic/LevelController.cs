@@ -9,10 +9,13 @@ public class LevelController : MonoBehaviour
     public List<string> objects = new List<string>();
     public int noOfBoxes = new int();
     public int inputNumber = new int();
+
+    [Header("Events")]
     public GameEvents Food1OrderUpdate;
     public GameEvents Food2OrderUpdate;
     public GameEvents Food3OrderUpdate;
     public GameEvents Food4OrderUpdate;
+    public GameEvents currentBox; // implement this broadcast
 
     [SerializeField]
     private List<Dictionary<string, int>> listOfLevelRequirements = new List<Dictionary<string, int>>();
@@ -36,12 +39,14 @@ public class LevelController : MonoBehaviour
         }
         broadcastBoxOrder(listOfLevelRequirements, levelCounter);
         levelCounter++;
+        currentBox.Raise(this, levelCounter);
     }
 
     public void BoxPacked(Component sender, object data)
     {
         broadcastBoxOrder(listOfLevelRequirements, levelCounter);
         levelCounter++;
+        currentBox.Raise(this, levelCounter);
     }
 
     void broadcastBoxOrder(List<Dictionary<string, int>> listOfLevelRequirements, int levelCounter)
