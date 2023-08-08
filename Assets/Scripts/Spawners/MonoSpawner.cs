@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClosedBoxSpawner : MonoBehaviour
+public class MonoSpawner : MonoBehaviour
 {
     public GameEvents OnCollision;
     public GameObject spawnItem;
