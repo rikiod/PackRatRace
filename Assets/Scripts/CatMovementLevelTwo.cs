@@ -41,7 +41,7 @@ public class CatMovementLevelTwo : MonoBehaviour
         }
     }
 
-    public void StopMovement() {
+    public void CreepyTime() {
 
         isMoving = false;
 

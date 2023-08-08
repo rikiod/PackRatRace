@@ -24,6 +24,7 @@ public class catMovement2 : MonoBehaviour
     int isMoving = 0;
     bool directionn = true; // true = walk towards door. false = walk away from door
     int dialogueNum = 1;
+    SceneTransitionManager sceneTransitionManager;
     
     
     // Start is called before the first frame update
@@ -136,7 +137,13 @@ public class catMovement2 : MonoBehaviour
 
             Text.text = "Filthy rat, don't make me regret hiring you.";
             audioSource.Play();
-            yield return new WaitForSeconds(textWaitTime);
+            yield return new WaitForSeconds(textWaitTime + 2);
+
+
+            //end level, go to lv2
+            sceneTransitionManager.GoToScene(2);
+
+
         }
         
         textBox.SetActive(false);
