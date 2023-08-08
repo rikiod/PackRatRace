@@ -1646,7 +1646,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1522078383}
   m_Father: {fileID: 1134791060}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &630280043
@@ -2044,7 +2045,7 @@ MonoBehaviour:
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
   m_ModelPrefab: {fileID: 2680034563851987896, guid: b5d3e606d81b4714f9eacaf27943cbe5, type: 3}
-  m_ModelParent: {fileID: 0}
+  m_ModelParent: {fileID: 1522078383}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
   m_ModelSelectTransition: 
@@ -3683,6 +3684,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 994df19f33d13914dabd5c73ad74c127, type: 3}
   m_PrefabInstance: {fileID: 541880483}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1522078382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1522078383}
+  - component: {fileID: 1522078384}
+  m_Layer: 0
+  m_Name: RightHand Controller Hand Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1522078383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522078382}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 630280042}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1522078384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522078382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5bfaeb3b9383a5479a9569b19c09e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closeAnimationAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Close Animation
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: aa0d8ef9-5b0a-4adf-bff3-618f1aeebe68
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  closedModel: {fileID: 5838446537387336964, guid: 8c44f9069464d9948b9afac5e9a70d9c, type: 3}
+  originalModel: {fileID: 3349188903496773890, guid: b5d3e606d81b4714f9eacaf27943cbe5, type: 3}
 --- !u!1001 &1551631103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3782,6 +3841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3db55fa4186a48f280413aa78d2f088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeScreen: {fileID: 0}
 --- !u!114 &1567757367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5393,7 +5453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5bfaeb3b9383a5479a9569b19c09e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionBasedController: {fileID: 0}
   closeAnimationAction:
     m_UseReference: 1
     m_Action:
@@ -5406,7 +5465,8 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  closedModel: {fileID: 0}
+  closedModel: {fileID: 3607648043921707, guid: 65137449cb872ed42a1b47ef907654f4, type: 3}
+  originalModel: {fileID: 7483376051645691079, guid: 142872515144af84a8564e2b0b96daff, type: 3}
 --- !u!1 &1959643019
 GameObject:
   m_ObjectHideFlags: 0
