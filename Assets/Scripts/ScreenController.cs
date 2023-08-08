@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 using static UnityEngine.Rendering.PostProcessing.SubpixelMorphologicalAntialiasing;
 
+// 4 listeners for getting order requirements
+// 4 listeners for checking unput requirements
+// 1 listener for if box is completely good
 public class ScreenController : MonoBehaviour
 {
     public SpriteRenderer check1;
@@ -46,6 +50,9 @@ public class ScreenController : MonoBehaviour
     private bool Food3Complete;
     private bool Food4Complete;
 
+    private bool orderComplete;
+    private bool orderCorrect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,11 +83,23 @@ public class ScreenController : MonoBehaviour
             {
                 ItemComplete(4);
             }
+            if (orderComplete)
+            {
+                if (orderCorrect)
+                {
+                    OrderComplete();
+                }
+                else
+                {
+                    OrderFailed();
+                }
+            }
             FoodUpdate = false;
         }
 
     }
 
+    //To recieve new order
     public void Food1OrderUpdate(Component sender, object data)
     {
         FoodUpdate = true;
@@ -101,7 +120,9 @@ public class ScreenController : MonoBehaviour
         FoodUpdate = true;
         Food4 = int.Parse(data.ToString());
     }
-    private void Food1Update(Component sender, object data)
+
+    //To check if order is correct
+    public void Food1Update(Component sender, object data)
     {
         if (data is bool)
         {
@@ -109,7 +130,7 @@ public class ScreenController : MonoBehaviour
         }
         FoodUpdate = true;
     }
-    private void Food2Update(Component sender, object data)
+    public void Food2Update(Component sender, object data)
     {
         if (data is bool && (bool)data)
         {
@@ -117,7 +138,7 @@ public class ScreenController : MonoBehaviour
         }
         FoodUpdate = true;
     }
-    private void Food3Update(Component sender, object data)
+    public void Food3Update(Component sender, object data)
     {
         if (data is bool && (bool)data)
         {
@@ -125,7 +146,7 @@ public class ScreenController : MonoBehaviour
         }
         FoodUpdate = true;
     }
-    private void Food4Update(Component sender, object data)
+    public void Food4Update(Component sender, object data)
     {
         if (data is bool && (bool)data)
         {
@@ -291,11 +312,20 @@ public class ScreenController : MonoBehaviour
         }
     }
 
+    // to check if overall order is correct
+    public void onOrderComplete (Component sender, object data)
+    {
+        if (data is bool)
+        {
+            FoodUpdate = true;
+            orderCorrect = (bool) data;
+        }
+        orderComplete = true;
+    }
     private void OrderComplete () {
         bigThing.sprite = bigCheck;
         bigThing.enabled = true;
     }
-
     private void OrderFailed () {
         bigThing.sprite = bigX;
         bigThing.enabled = true;

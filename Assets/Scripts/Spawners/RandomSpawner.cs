@@ -29,6 +29,7 @@ public class RandomSpawner : MonoBehaviour
         newSpawnedObject.GetComponent<Rigidbody>().velocity = transform.forward * initialSpeed;
         newSpawnedObject.transform.parent = transform;
         newSpawnedObject.GetComponent<Rigidbody>().position = transform.position;
+        newSpawnedObject.name = spawnItem.name;
     }
 
     int GetRandomNumber(int minValue, int maxValue)

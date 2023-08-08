@@ -5,7 +5,7 @@ using System.Threading;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 
-public class CheckCollision : MonoBehaviour
+public class CheckCollision : MonoBehaviour //needs to implement listener for onCall
 {
     [Header("Events and Objects to Detect")]
     public List<string> objectToDetect = new List<string>();
@@ -15,17 +15,20 @@ public class CheckCollision : MonoBehaviour
     [Header("Events")]
     public GameEvents scanCompleted;
 
-    private bool isActive = false;
     private bool toBroadcast = false;
     private Dictionary<string, int> counter = new Dictionary<string, int>();
+    private bool runCollision = true;
+
+    [SerializeField]
+    private List<GameObject> detectedItems = new List<GameObject>();
     
     private void Start()
     {
         for (int i = 0; i < objectToDetect.Count; i++)
         {
             objectToDetectAndBroadcast[objectToDetect[i]] = gameEvents[i];
+            counter[objectToDetect[i]] = 0;
         }
-        resetCounter();
     }
 
     private void Update()
@@ -40,9 +43,9 @@ public class CheckCollision : MonoBehaviour
     }
     void resetCounter()
     {
-        foreach (KeyValuePair<string, int> entry in counter)
+        for (int i = 0; i < objectToDetect.Count; i++)
         {
-            counter[entry.Key] = 0;
+            counter[objectToDetect[i]] = 0;
         }
     }
 
@@ -57,21 +60,41 @@ public class CheckCollision : MonoBehaviour
     {
         if (data is bool)
         {
+            runCollision = false;
             bool value = (bool)data;
-            isActive = value;
             if (!value)
             {
+                Debug.Log("Broadcasting");
+                runCollision = true;
                 toBroadcast = true;
+            }
+            else
+            {
+                for (int i = detectedItems.Count - 1; i >= 0; i--)
+                {
+/*                    Debug.Log(detectedItems[i]);*/
+                    if (objectToDetect.Contains(detectedItems[i].name))
+                    {
+                        counter[detectedItems[i].gameObject.name]++;
+                    }
+                }
+                for (int i = detectedItems.Count - 1; i >= 0; i--)
+                {
+                    Debug.Log(detectedItems[i]);
+                    if (objectToDetect.Contains(detectedItems[i].name) || detectedItems[i].name == "BoxOpen")
+                    {
+                        Destroy(detectedItems[i].gameObject);
+                    }
+                }
+                detectedItems.Clear();
             }
         }
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (objectToDetectAndBroadcast.ContainsKey(other.gameObject.name) && isActive)
+        if (runCollision)
         {
-/*            Debug.Log(other.gameObject.name);*/
-            counter[other.gameObject.name]++;
-            Destroy(other.gameObject);
+            detectedItems.Add(other.gameObject);
         }
     }
 }
