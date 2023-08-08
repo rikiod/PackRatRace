@@ -394,6 +394,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3149592218241963005, guid: d162c60ef84a4424a889364eebbe5ac4, type: 3}
+      propertyPath: speed
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -711,6 +715,11 @@ CapsuleCollider:
   m_Height: 1.3743991
   m_Direction: 1
   m_Center: {x: -0.40509748, y: 0.901992, z: -0.09504509}
+--- !u!4 &294579443 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3844065889909022326, guid: b20c35a931a870e45a7c5ac0e84ff057, type: 3}
+  m_PrefabInstance: {fileID: 626441243}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &335034641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1440,7 +1449,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3844065889909022326, guid: b20c35a931a870e45a7c5ac0e84ff057, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1885987659}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b20c35a931a870e45a7c5ac0e84ff057, type: 3}
 --- !u!1 &664428956 stripped
@@ -1606,7 +1618,7 @@ MonoBehaviour:
   - {fileID: 251044309}
   - {fileID: 1205032691}
   - {fileID: 873486607}
-  frequency: 0.6
+  frequency: 1
   initialSpeed: 0
 --- !u!1 &847918569
 GameObject:
@@ -1706,7 +1718,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4bdb066460af4dc43bab6dde8c228512, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2040,6 +2052,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.4470072, y: 3.5122213, z: 0.12519169}
   m_Center: {x: -2.4948182, y: 1.7561107, z: -4.157785}
+--- !u!4 &889107034 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3048023730004530390, guid: 9b2c2be247f2b754db2b4b92b79a6b37, type: 3}
+  m_PrefabInstance: {fileID: 5254133943068033299}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &953741962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2131,6 +2148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpeed: 10
+  waitTime: 2
   can: {fileID: 1455584668}
   openGrinder: {fileID: 889107021}
   closedGrinder: {fileID: 143057763}
@@ -2849,7 +2867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 331b5cc0b136e2c42b4c62e1d0179fe1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.812
+      value: -1.452
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 331b5cc0b136e2c42b4c62e1d0179fe1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6497,7 +6515,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3048023730004530390, guid: 9b2c2be247f2b754db2b4b92b79a6b37, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 113590787}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4928027890849739114, guid: 9b2c2be247f2b754db2b4b92b79a6b37, type: 3}
       insertIndex: -1
