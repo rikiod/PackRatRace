@@ -50,18 +50,26 @@ public class ScreenController : MonoBehaviour
     private bool Food3Complete;
     private bool Food4Complete;
 
-    private bool orderComplete;
+    private bool orderCompleted;
     private bool orderCorrect;
+    private bool resetScreen;
 
     // Start is called before the first frame update
     void Start()
     {
         Reset();
+
     }
 
     void Update()
     {
-        if (FoodUpdate)
+        if (resetScreen)
+        {
+            Reset();
+            resetScreen = false;
+            FoodUpdate = true;
+        }
+        else if (FoodUpdate)
         {
             Food1Order(Food1);
             Food2Order(Food2);
@@ -83,7 +91,7 @@ public class ScreenController : MonoBehaviour
             {
                 ItemComplete(4);
             }
-            if (orderComplete)
+            if (orderCompleted)
             {
                 if (orderCorrect)
                 {
@@ -94,31 +102,41 @@ public class ScreenController : MonoBehaviour
                     OrderFailed();
                 }
             }
-            FoodUpdate = false;
+            else
+            {
+                FoodUpdate = false;
+            }
+            orderCompleted = false;
         }
 
     }
+
+
 
     //To recieve new order
     public void Food1OrderUpdate(Component sender, object data)
     {
         FoodUpdate = true;
         Food1 = int.Parse(data.ToString());
+/*        Debug.Log("Food1: " + data.ToString());*/
     }
     public void Food2OrderUpdate(Component sender, object data)
     {
         FoodUpdate = true;
         Food2 = int.Parse(data.ToString());
+/*        Debug.Log("Food2: " + data.ToString());*/
     }
     public void Food3OrderUpdate(Component sender, object data)
     {
         FoodUpdate = true;
         Food3 = int.Parse(data.ToString());
+/*        Debug.Log("Food3: " + data.ToString());*/
     }
     public void Food4OrderUpdate(Component sender, object data)
     {
         FoodUpdate = true;
         Food4 = int.Parse(data.ToString());
+/*        Debug.Log("Food4: " + data.ToString());*/
     }
 
     //To check if order is correct
@@ -155,7 +173,17 @@ public class ScreenController : MonoBehaviour
         FoodUpdate = true;
     }
 
+    //Check to reset screen
+    public void ResetScreen(Component sender, object data)
+    {
+        if (data is bool)
+        {
+            resetScreen = (bool)data;
+        }
+    }
+
     void Reset() {
+        Debug.Log("resetScreen");
         bigThing.enabled = false;
         
         // check1.enabled = false;
@@ -320,7 +348,7 @@ public class ScreenController : MonoBehaviour
             FoodUpdate = true;
             orderCorrect = (bool) data;
         }
-        orderComplete = true;
+        orderCompleted = true;
     }
     private void OrderComplete () {
         bigThing.sprite = bigCheck;

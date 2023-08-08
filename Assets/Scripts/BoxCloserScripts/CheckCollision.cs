@@ -80,7 +80,7 @@ public class CheckCollision : MonoBehaviour //needs to implement listener for on
                 }
                 for (int i = detectedItems.Count - 1; i >= 0; i--)
                 {
-                    Debug.Log(detectedItems[i]);
+/*                    Debug.Log(detectedItems[i]);*/
                     if (objectToDetect.Contains(detectedItems[i].name) || detectedItems[i].name == "BoxOpen")
                     {
                         Destroy(detectedItems[i].gameObject);

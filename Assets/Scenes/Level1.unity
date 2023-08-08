@@ -3690,7 +3690,7 @@ Transform:
   m_GameObject: {fileID: 986431898}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.027, y: 0.268, z: 1.701}
+  m_LocalPosition: {x: -0.024, y: 0.268, z: 1.701}
   m_LocalScale: {x: 0.2487, y: 0.2487, z: 0.2487}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4760,13 +4760,14 @@ MonoBehaviour:
   - Food2
   - Food3
   - Food4
-  noOfBoxes: 1
+  noOfBoxes: 3
   inputNumber: 4
   Food1OrderUpdate: {fileID: 11400000, guid: 3c98e4ad20171974e9be2d3766abdc04, type: 2}
   Food2OrderUpdate: {fileID: 11400000, guid: d3d1b95158de6db4097b16ad9ee58c8d, type: 2}
   Food3OrderUpdate: {fileID: 11400000, guid: 8439314005a40964aa3983104866f40f, type: 2}
   Food4OrderUpdate: {fileID: 11400000, guid: 22e3dba25eee8254e8144631461c97ee, type: 2}
   currentBox: {fileID: 11400000, guid: ce26d7a89e75a18459a6b880bf7e462d, type: 2}
+  resetScreen: {fileID: 11400000, guid: 715dcef13cef0ae41a546799bd47267e, type: 2}
   gameEvents:
   - {fileID: 11400000, guid: 7ba11e34e70d4de4f85bfb8088f0df3f, type: 2}
   - {fileID: 11400000, guid: 0de51e8fb9d5c104e8108c4416bd1765, type: 2}
@@ -7377,179 +7378,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1180407361071583072, guid: 4672bf147f972904e84494612f8370e1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2066176749}
-    - targetCorrespondingSourceObject: {fileID: 1180407361071583072, guid: 4672bf147f972904e84494612f8370e1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2066176748}
-    - targetCorrespondingSourceObject: {fileID: 1180407361071583072, guid: 4672bf147f972904e84494612f8370e1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2066176747}
-    - targetCorrespondingSourceObject: {fileID: 1180407361071583072, guid: 4672bf147f972904e84494612f8370e1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2066176746}
-    - targetCorrespondingSourceObject: {fileID: 1180407361071583072, guid: 4672bf147f972904e84494612f8370e1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2066176745}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4672bf147f972904e84494612f8370e1, type: 3}
---- !u!1 &2066176743 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1180407361071583072, guid: 4672bf147f972904e84494612f8370e1, type: 3}
-  m_PrefabInstance: {fileID: 2066176742}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2066176744 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1674401864206211977, guid: 4672bf147f972904e84494612f8370e1, type: 3}
-  m_PrefabInstance: {fileID: 2066176742}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066176743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8a59d00870229643ab52be7c33fddaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2066176745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066176743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e521ded614f2f540910f7949dd3980d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents: {fileID: 11400000, guid: 87cb3ed2848bdd04ca242eef12818f11, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2066176744}
-        m_TargetAssemblyTypeName: ScreenController, Assembly-CSharp
-        m_MethodName: onOrderComplete
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2066176746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066176743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e521ded614f2f540910f7949dd3980d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents: {fileID: 11400000, guid: bca129be7103b05459ba87dc9bb1839e, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2066176744}
-        m_TargetAssemblyTypeName: ScreenController, Assembly-CSharp
-        m_MethodName: Food4Update
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2066176747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066176743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e521ded614f2f540910f7949dd3980d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents: {fileID: 11400000, guid: e5edae31d4bdf204784951f4797b5b1a, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2066176744}
-        m_TargetAssemblyTypeName: ScreenController, Assembly-CSharp
-        m_MethodName: Food3Update
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2066176748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066176743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e521ded614f2f540910f7949dd3980d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents: {fileID: 11400000, guid: 0de51e8fb9d5c104e8108c4416bd1765, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2066176744}
-        m_TargetAssemblyTypeName: ScreenController, Assembly-CSharp
-        m_MethodName: Food2Update
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2066176749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066176743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e521ded614f2f540910f7949dd3980d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvents: {fileID: 11400000, guid: 7ba11e34e70d4de4f85bfb8088f0df3f, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2066176744}
-        m_TargetAssemblyTypeName: ScreenController, Assembly-CSharp
-        m_MethodName: Food1Update
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &2069409656
 PrefabInstance:
   m_ObjectHideFlags: 0
