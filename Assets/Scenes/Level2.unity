@@ -4918,6 +4918,52 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 7779212132400271959, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!1 &1779555459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1779555461}
+  - component: {fileID: 1779555460}
+  m_Layer: 0
+  m_Name: lv2Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1779555460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779555459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf61ae5c639634043a5af5494c4a8366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicPlayer: {fileID: 1780187635}
+  catBoss: {fileID: 1100622781}
+--- !u!4 &1779555461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779555459}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5297454, y: 0.91833544, z: 0.023925543}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1780187632
 GameObject:
   m_ObjectHideFlags: 0
@@ -4928,6 +4974,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1780187634}
   - component: {fileID: 1780187633}
+  - component: {fileID: 1780187635}
   m_Layer: 0
   m_Name: MusicPlayer
   m_TagString: Untagged
@@ -5046,6 +5093,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1780187635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780187632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db190123934dc64ab9485b317fa5488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1780187633}
+  creepyMusic: {fileID: 8300000, guid: 02673b8279425c44dbd167b3d2f10ae8, type: 3}
 --- !u!1 &1787111943
 GameObject:
   m_ObjectHideFlags: 0
@@ -6484,3 +6545,4 @@ SceneRoots:
   - {fileID: 847918570}
   - {fileID: 1208779351}
   - {fileID: 1100622780}
+  - {fileID: 1779555461}
