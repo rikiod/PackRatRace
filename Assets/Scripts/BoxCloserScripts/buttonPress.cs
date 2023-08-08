@@ -10,6 +10,7 @@ public class buttonPress : MonoBehaviour
     public UnityEvent onRelease;
     GameObject pusher;
     bool isPressed;
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,7 @@ public class buttonPress : MonoBehaviour
             pusher = other.gameObject;
             onPress.Invoke();
             isPressed = true;
+            audioSource.Play();
         }
     }
 
