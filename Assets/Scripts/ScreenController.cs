@@ -38,6 +38,7 @@ public class ScreenController : MonoBehaviour
     public Sprite sp_five;
     public Sprite bigCheck;
     public Sprite bigX;
+    public Sprite blueCan;
 
     private bool FoodUpdate = false;
     private int Food1;
@@ -50,18 +51,28 @@ public class ScreenController : MonoBehaviour
     private bool Food3Complete;
     private bool Food4Complete;
 
-    private bool orderComplete;
+    private bool orderCompleted;
     private bool orderCorrect;
+    private bool resetScreen;
+    
+    private bool creepyness = false;
 
     // Start is called before the first frame update
     void Start()
     {
         Reset();
+
     }
 
     void Update()
     {
-        if (FoodUpdate)
+        if (resetScreen)
+        {
+            Reset();
+            resetScreen = false;
+            FoodUpdate = true;
+        }
+        else if (FoodUpdate)
         {
             Food1Order(Food1);
             Food2Order(Food2);
@@ -83,7 +94,7 @@ public class ScreenController : MonoBehaviour
             {
                 ItemComplete(4);
             }
-            if (orderComplete)
+            if (orderCompleted)
             {
                 if (orderCorrect)
                 {
@@ -94,31 +105,46 @@ public class ScreenController : MonoBehaviour
                     OrderFailed();
                 }
             }
-            FoodUpdate = false;
+            else
+            {
+                FoodUpdate = false;
+            }
+            orderCompleted = false;
+        }
+
+
+        if (creepyness) {
+            Food5Order();
         }
 
     }
+
+
 
     //To recieve new order
     public void Food1OrderUpdate(Component sender, object data)
     {
         FoodUpdate = true;
         Food1 = int.Parse(data.ToString());
+/*        Debug.Log("Food1: " + data.ToString());*/
     }
     public void Food2OrderUpdate(Component sender, object data)
     {
         FoodUpdate = true;
         Food2 = int.Parse(data.ToString());
+/*        Debug.Log("Food2: " + data.ToString());*/
     }
     public void Food3OrderUpdate(Component sender, object data)
     {
         FoodUpdate = true;
         Food3 = int.Parse(data.ToString());
+/*        Debug.Log("Food3: " + data.ToString());*/
     }
     public void Food4OrderUpdate(Component sender, object data)
     {
         FoodUpdate = true;
         Food4 = int.Parse(data.ToString());
+/*        Debug.Log("Food4: " + data.ToString());*/
     }
 
     //To check if order is correct
@@ -155,7 +181,17 @@ public class ScreenController : MonoBehaviour
         FoodUpdate = true;
     }
 
+    //Check to reset screen
+    public void ResetScreen(Component sender, object data)
+    {
+        if (data is bool)
+        {
+            resetScreen = (bool)data;
+        }
+    }
+
     void Reset() {
+/*        Debug.Log("resetScreen");*/
         bigThing.enabled = false;
         
         // check1.enabled = false;
@@ -191,109 +227,169 @@ public class ScreenController : MonoBehaviour
         num3.sprite = sp_zero;
         num4.sprite = sp_zero;
 
+        Food1Complete = false;
+        Food2Complete = false;
+        Food3Complete = false;
+        Food4Complete = false;
+
     }
     private void Food1Order(int quantity) {
-/*        GameObject check = transform.Find("Check1").gameObject;
-        GameObject num = transform.Find("Num1").gameObject;
-        GameObject times = transform.Find("x1").gameObject;
-        GameObject item = transform.Find("Item1").gameObject;*/
-        
-        if (quantity != 0) {
+        /*        GameObject check = transform.Find("Check1").gameObject;
+                GameObject num = transform.Find("Num1").gameObject;
+                GameObject times = transform.Find("x1").gameObject;
+                GameObject item = transform.Find("Item1").gameObject;*/
 
-            //num1.enabled = true;
-            //x1.enabled = true;
-            //item1.enabled = true;
+
+        //num1.enabled = true;
+        //x1.enabled = true;
+        //item1.enabled = true;
+        //check1.enabled = true;
+
+/*        Debug.Log("Food1ValueUpdated");*/
+        check1.sprite = bullet;
+        if (quantity == 0)
+        {
+            num1.sprite = sp_zero;
+            item1.color = Color.grey;
+        }
+        else
+        {
             item1.color = Color.white;
-            //check1.enabled = true;
-            
-            if (quantity == 1) {
+            if (quantity == 1)
+            {
                 num1.sprite = sp_one;
             }
-            else if (quantity == 2) {
+            else if (quantity == 2)
+            {
                 num1.sprite = sp_two;
             }
-            else if (quantity == 3) {
+            else if (quantity == 3)
+            {
                 num1.sprite = sp_three;
             }
-            else if (quantity == 4) {
+            else if (quantity == 4)
+            {
                 num1.sprite = sp_four;
             }
-            else if (quantity == 5) {
+            else if (quantity == 5)
+            {
                 num1.sprite = sp_five;
             }
         }
     }
     private void Food2Order(int quantity) {
-        
-        if (quantity != 0) {
 
+/*        Debug.Log("Food2ValueUpdated");*/
+        check2.sprite = bullet;
+        if (quantity == 0)
+        {
+            num2.sprite = sp_zero;
+            item2.color = Color.grey;
+        }
+        else
+        {
             item2.color = Color.white;
-            //check2.enabled = true;
-            
-            if (quantity == 1) {
+            if (quantity == 1)
+            {
                 num2.sprite = sp_one;
             }
-            else if (quantity == 2) {
+            else if (quantity == 2)
+            {
                 num2.sprite = sp_two;
             }
-            else if (quantity == 3) {
+            else if (quantity == 3)
+            {
                 num2.sprite = sp_three;
             }
-            else if (quantity == 4) {
+            else if (quantity == 4)
+            {
                 num2.sprite = sp_four;
             }
-            else if (quantity == 5) {
+            else if (quantity == 5)
+            {
                 num2.sprite = sp_five;
             }
         }
     }
     private void Food3Order(int quantity) {
-        
-        if (quantity != 0) {
 
+/*        Debug.Log("Food3ValueUpdated");*/
+        check3.sprite = bullet;
+        if (quantity == 0)
+        {
+            num3.sprite = sp_zero;
+            item3.color = Color.grey;
+        }
+        else
+        {
             item3.color = Color.white;
-            //check3.enabled = true;
-            
-            if (quantity == 1) {
+            if (quantity == 1)
+            {
                 num3.sprite = sp_one;
             }
-            else if (quantity == 2) {
+            else if (quantity == 2)
+            {
                 num3.sprite = sp_two;
             }
-            else if (quantity == 3) {
+            else if (quantity == 3)
+            {
                 num3.sprite = sp_three;
             }
-            else if (quantity == 4) {
+            else if (quantity == 4)
+            {
                 num3.sprite = sp_four;
             }
-            else if (quantity == 5) {
+            else if (quantity == 5)
+            {
                 num3.sprite = sp_five;
             }
         }
+
     }
     private void Food4Order(int quantity) {
-        
-        if (quantity != 0) {
 
+/*        Debug.Log("Food4ValueUpdated");*/
+        check4.sprite = bullet;
+        if (quantity == 0)
+        {
+            num4.sprite = sp_zero;
+            item4.color = Color.grey;
+        }
+        else
+        {
             item4.color = Color.white;
-            //check4.enabled = true;
-            
-            if (quantity == 1) {
+            if (quantity == 1)
+            {
                 num4.sprite = sp_one;
             }
-            else if (quantity == 2) {
+            else if (quantity == 2)
+            {
                 num4.sprite = sp_two;
             }
-            else if (quantity == 3) {
+            else if (quantity == 3)
+            {
                 num4.sprite = sp_three;
             }
-            else if (quantity == 4) {
+            else if (quantity == 4)
+            {
                 num4.sprite = sp_four;
             }
-            else if (quantity == 5) {
+            else if (quantity == 5)
+            {
                 num4.sprite = sp_five;
             }
         }
+
+    }
+
+    private void Food5Order() {
+
+        Reset();
+        check1.sprite = bullet;
+        num1.sprite = sp_one;
+        item1.sprite = blueCan;
+        item1.color = Color.white;
+
     }
 
     // input is the number of the food type => Just adds the check marks
@@ -320,7 +416,7 @@ public class ScreenController : MonoBehaviour
             FoodUpdate = true;
             orderCorrect = (bool) data;
         }
-        orderComplete = true;
+        orderCompleted = true;
     }
     private void OrderComplete () {
         bigThing.sprite = bigCheck;
@@ -330,4 +426,15 @@ public class ScreenController : MonoBehaviour
         bigThing.sprite = bigX;
         bigThing.enabled = true;
     }
+
+
+
+
+
+    public void CreepyTime() {
+        creepyness = true;
+        print(creepyness);
+    }
+
+
 }

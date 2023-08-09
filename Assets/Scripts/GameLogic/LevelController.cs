@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 //no need to implement listener for onBoxPacked. It is automatically called at the end of scan completed
@@ -19,13 +20,17 @@ public class LevelController : MonoBehaviour
     public GameEvents Food3OrderUpdate;
     public GameEvents Food4OrderUpdate;
     public GameEvents currentBox; // implement this broadcast
+    public GameEvents resetScreen;
 
-    [Header("Events")] 
+    [Header("EventsList")] 
     public List<GameEvents> gameEvents = new List<GameEvents>(); //List of gameEvents in same sequence as the objects list
     public Dictionary<string, GameEvents> objectToDetectAndBroadcast = new Dictionary<string, GameEvents>(); //Creates a dictionary with gameEvents and objects list
 
     private List<Dictionary<string, int>> listOfLevelRequirements = new List<Dictionary<string, int>>();
     private Dictionary<string, int> input = new Dictionary<string, int>();
+
+    private bool beginFinalCountdown = false;
+    private int counter = 0;
 
     [SerializeField]
     private int levelCounter = 0;
@@ -45,7 +50,7 @@ public class LevelController : MonoBehaviour
             List<int> splitNumbers = RandomDistribution(inputNumber, noOfObjects);
             for (int i = 0; i < noOfObjects; i++)
             {
-                Debug.Log(objects[i] + " : "+splitNumbers[i].ToString());
+                Debug.Log(objects[i] + " : " + splitNumbers[i].ToString());
                 levelObjectives[objects[i]] = splitNumbers[i];
             }
             listOfLevelRequirements.Add(levelObjectives);
@@ -58,28 +63,17 @@ public class LevelController : MonoBehaviour
         onBoxPacked();
     }
 
-    private void Update()
-    {
-        if (scanCompletedBool)
-        {
-            Debug.Log(scanCompletedBool.ToString());
-            scanCompleted();
-            scanCompletedBool = false;
-        }
-    }
-
     public void onBoxPacked()
     {
         for (int i = 0; i < objects.Count; i++)
         {
             input[objects[i]] = 0;
         }
-        broadcastBoxOrder(listOfLevelRequirements, levelCounter);
-        levelCounter++;
+        broadcastBoxOrder();
         currentBox.Raise(this, levelCounter);
     }
 
-    void broadcastBoxOrder(List<Dictionary<string, int>> listOfLevelRequirements, int levelCounter)
+    void broadcastBoxOrder()
     {
         Food1OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Food1"].ToString());
         Food2OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Food2"].ToString());
@@ -132,31 +126,49 @@ public class LevelController : MonoBehaviour
     {
         input["Food4"] = int.Parse(data.ToString());
     }
+
+    private void FixedUpdate()
+    {
+        if (beginFinalCountdown)
+        {
+            counter++;
+            if (counter == 100)
+            {
+                resetScreen.Raise(this, true);
+            }
+            else if (counter == 101)
+            {
+                counter = 0;
+                beginFinalCountdown = false;
+                levelCounter++;
+                onBoxPacked();
+            }
+        }
+    }
     public void detectScanCompleted(Component sender, object data)
     {
-        scanCompletedBool = true;
-    }
-
-    public IEnumerator scanCompleted()
-    {
-        correctOrder = true;
-        foreach (KeyValuePair<string, int> kvp in listOfLevelRequirements[levelCounter])
+/*        foreach (KeyValuePair<string, int> kvp in input)
         {
-            if (kvp.Value == input[kvp.Key])
+            Debug.Log(kvp.Key + ": " + kvp.Value);
+        }*/
+        if (levelCounter <= noOfBoxes)
+        {
+            correctOrder = true;
+            foreach (KeyValuePair<string, int> kvp in listOfLevelRequirements[levelCounter])
             {
-                objectToDetectAndBroadcast[kvp.Key].Raise(this, true);
+                if (kvp.Value == input[kvp.Key])
+                {
+                    objectToDetectAndBroadcast[kvp.Key].Raise(this, true);
+                }
+                else
+                {
+                    objectToDetectAndBroadcast[kvp.Key].Raise(this, false);
+                    correctOrder = false;
+                }
             }
-            else
-            {
-                objectToDetectAndBroadcast[kvp.Key].Raise(this, false);
-                correctOrder = false;
-            }
-            yield return new WaitForSeconds(1);
+            orderCorrect.Raise(this, correctOrder);
         }
-        orderCorrect.Raise(this, correctOrder);
-
-        yield return new WaitForSeconds(5);
-        onBoxPacked();
-    }
+        beginFinalCountdown = true;
         
+    }
 }
