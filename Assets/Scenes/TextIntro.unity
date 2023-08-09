@@ -1319,6 +1319,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayBeforeLoading: 60
   sceneTransitionManager: {fileID: 1068711180}
+  skipSceneAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Skip Scene
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 8e03a51f-e5d0-4b62-ac64-716622c26a18
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &1622025526
 GameObject:
   m_ObjectHideFlags: 0
