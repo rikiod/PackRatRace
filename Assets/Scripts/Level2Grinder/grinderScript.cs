@@ -61,13 +61,13 @@ public class grinderScript : MonoBehaviour
             }
         }
         //start the production of a can
-        Destroy(grinder);
-        grinder = Instantiate(closedGrinder, transform.position, Quaternion.Euler(0, 180, 0));
         if (meatPresent)
         {
             grinderComplete.Raise(this, meatPresent);
         }
         yield return new WaitForSeconds(waitTime);
+        Destroy(grinder);
+        grinder = Instantiate(closedGrinder, transform.position, Quaternion.Euler(0, 180, 0));
     }
 
     public void canCheck(Component sender, object Data)
