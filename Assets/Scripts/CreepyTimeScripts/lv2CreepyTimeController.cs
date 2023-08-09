@@ -46,6 +46,8 @@ public class lv2CreepyTimeController : MonoBehaviour
         musicPlayer.CreepyTime(2);
         //tV.CreepyTime();
         catBoss.CreepyTime();
+        screenController.CreepyTime();
+        
         
         
         // grinder already has it by default; whenever rat head, spits out blue can
