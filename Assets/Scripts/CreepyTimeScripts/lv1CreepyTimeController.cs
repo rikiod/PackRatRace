@@ -60,10 +60,10 @@ public class lv1Controller : MonoBehaviour
 
 
 
-    void Start()
-    {
-        StartCoroutine(Testingg());
-    }
+    // void Start()
+    // {
+    //     StartCoroutine(Testingg());
+    // }
 
     IEnumerator Testingg() {
         yield return new WaitForSeconds(5);
