@@ -5,16 +5,18 @@ using UnityEngine;
 public class RandomSpawner : MonoBehaviour
 {
    public List<GameObject> spawnItemList = new List<GameObject>();
+   public GameObject ratHead;
 
     public float frequency;
     public float initialSpeed;
 
     float lastSpawnedTime;
+    bool spawnbool = true;
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > lastSpawnedTime + frequency)
+        if (Time.time > lastSpawnedTime + frequency && spawnbool)
         {
             int num = GetRandomNumber(0, spawnItemList.Count);
             GameObject spawnItem = spawnItemList[num];
@@ -37,4 +39,18 @@ public class RandomSpawner : MonoBehaviour
     {
         return Random.Range(minValue, maxValue);
     }
+
+    public void CreepyTime() {
+
+        spawnbool = false;
+        StartCoroutine(Waitt());
+
+    }
+
+    IEnumerator Waitt() {
+        yield return new WaitForSeconds(2f);
+        Spawn(ratHead);
+    }
+
+
 }
