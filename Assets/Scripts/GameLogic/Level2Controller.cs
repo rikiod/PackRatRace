@@ -6,23 +6,23 @@ using UnityEngine;
 //no need to implement listener for onBoxPacked. It is automatically called at the end of scan completed
 //need to implement listener for detectScanCompleted which causes controller to broadcast which objectives are correct and then cycle to onBoxPacked
 //need to implement 4 listeners for getting the input of the objects added
-public class LevelController : MonoBehaviour 
+public class Level2Controller : MonoBehaviour
 {
     //Level Controller stores and broadcast the orders
     private System.Random random = new System.Random();
     public List<string> objects = new List<string>();
-    public int noOfBoxes = new int();
+    public int noOfCans = new int();
     public int inputNumber = new int();
 
     [Header("Events")] //these gameEvents are for broadcasting the current order
-    public GameEvents Food1OrderUpdate;
-    public GameEvents Food2OrderUpdate;
-    public GameEvents Food3OrderUpdate;
-    public GameEvents Food4OrderUpdate;
-    public GameEvents currentBox; // implement this broadcast
+    public GameEvents Meat1OrderUpdate;
+    public GameEvents Meat2OrderUpdate;
+    public GameEvents Meat3OrderUpdate;
+    public GameEvents Meat4OrderUpdate;
+    public GameEvents currentCan; // implement this broadcast
     public GameEvents resetScreen;
 
-    [Header("EventsList")] 
+    [Header("EventsList")]
     public List<GameEvents> gameEvents = new List<GameEvents>(); //List of gameEvents in same sequence as the objects list
     public Dictionary<string, GameEvents> objectToDetectAndBroadcast = new Dictionary<string, GameEvents>(); //Creates a dictionary with gameEvents and objects list
 
@@ -44,7 +44,7 @@ public class LevelController : MonoBehaviour
     void Start()
     {
         int noOfObjects = objects.Count;
-        for (int boxNo = 0; boxNo < noOfBoxes; boxNo++)
+        for (int boxNo = 0; boxNo < noOfCans; boxNo++)
         {
             Dictionary<string, int> levelObjectives = new Dictionary<string, int>();
             List<int> splitNumbers = RandomDistribution(inputNumber, noOfObjects);
@@ -70,16 +70,16 @@ public class LevelController : MonoBehaviour
             input[objects[i]] = 0;
         }
         broadcastBoxOrder();
-        currentBox.Raise(this, levelCounter);
+        currentCan.Raise(this, levelCounter);
     }
 
     void broadcastBoxOrder()
     {
-        Food1OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Food1"].ToString());
-        Food2OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Food2"].ToString());
-        Food3OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Food3"].ToString());
-        Food4OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Food4"].ToString());
-        currentBox.Raise(this, levelCounter);
+        Meat1OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Meat1"].ToString());
+        Meat2OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Meat2"].ToString());
+        Meat3OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Meat3"].ToString());
+        Meat4OrderUpdate.Raise(this, listOfLevelRequirements[levelCounter]["Meat4"].ToString());
+        currentCan.Raise(this, levelCounter);
     }
 
     public List<int> RandomDistribution(int originalNumber, int arraySize)
@@ -110,21 +110,21 @@ public class LevelController : MonoBehaviour
         return resultArray;
     }
 
-    public void Food1Detected(Component sender, object data)
+    public void Meat1Detected(Component sender, object data)
     {
-        input["Food1"] = int.Parse(data.ToString());
+        input["Meat1"] = int.Parse(data.ToString());
     }
-    public void Food2Detected(Component sender, object data)
+    public void Meat2Detected(Component sender, object data)
     {
-        input["Food2"] = int.Parse(data.ToString());
+        input["Meat2"] = int.Parse(data.ToString());
     }
-    public void Food3Detected(Component sender, object data)
+    public void Meat3Detected(Component sender, object data)
     {
-        input["Food3"] = int.Parse(data.ToString());
+        input["Meat3"] = int.Parse(data.ToString());
     }
-    public void Food4Detected(Component sender, object data)
+    public void Meat4Detected(Component sender, object data)
     {
-        input["Food4"] = int.Parse(data.ToString());
+        input["Meat4"] = int.Parse(data.ToString());
     }
 
     private void FixedUpdate()
@@ -147,28 +147,30 @@ public class LevelController : MonoBehaviour
     }
     public void detectScanCompleted(Component sender, object data)
     {
-/*        foreach (KeyValuePair<string, int> kvp in input)
+        /*        foreach (KeyValuePair<string, int> kvp in input)
+                {
+                    Debug.Log(kvp.Key + ": " + kvp.Value);
+                }*/
+        if (data is bool)
         {
-            Debug.Log(kvp.Key + ": " + kvp.Value);
-        }*/
-        if (levelCounter <= noOfBoxes)
-        {
-            correctOrder = true;
-            foreach (KeyValuePair<string, int> kvp in listOfLevelRequirements[levelCounter])
+            if (levelCounter <= noOfCans && (bool)data)
             {
-                if (kvp.Value == input[kvp.Key])
+                correctOrder = true;
+                foreach (KeyValuePair<string, int> kvp in listOfLevelRequirements[levelCounter])
                 {
-                    objectToDetectAndBroadcast[kvp.Key].Raise(this, true);
+                    if (kvp.Value == input[kvp.Key])
+                    {
+                        objectToDetectAndBroadcast[kvp.Key].Raise(this, true);
+                    }
+                    else
+                    {
+                        objectToDetectAndBroadcast[kvp.Key].Raise(this, false);
+                        correctOrder = false;
+                    }
                 }
-                else
-                {
-                    objectToDetectAndBroadcast[kvp.Key].Raise(this, false);
-                    correctOrder = false;
-                }
+                orderCorrect.Raise(this, correctOrder);
             }
-            orderCorrect.Raise(this, correctOrder);
+            beginFinalCountdown = true;
         }
-        beginFinalCountdown = true;
-        
     }
 }

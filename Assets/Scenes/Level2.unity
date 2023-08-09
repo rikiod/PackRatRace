@@ -715,11 +715,6 @@ CapsuleCollider:
   m_Height: 1.3743991
   m_Direction: 1
   m_Center: {x: -0.40509748, y: 0.901992, z: -0.09504509}
---- !u!4 &294579443 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3844065889909022326, guid: b20c35a931a870e45a7c5ac0e84ff057, type: 3}
-  m_PrefabInstance: {fileID: 626441243}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &335034641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,6 +1187,188 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 18bcfa851b9348c4bb53ff5dd7b8f63f, type: 3}
   m_PrefabInstance: {fileID: 553610766}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &598919686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 598919687}
+  - component: {fileID: 598919688}
+  - component: {fileID: 598919692}
+  - component: {fileID: 598919691}
+  - component: {fileID: 598919690}
+  - component: {fileID: 598919689}
+  m_Layer: 0
+  m_Name: LevelController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &598919687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598919686}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.27940536, y: 0.6712024, z: -1.4751098}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &598919688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598919686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb3e5cd5aa95ca429ff4f5e65039f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - meat1
+  - meat2
+  - meat3
+  - meat4
+  noOfCans: 4
+  inputNumber: 4
+  Meat1OrderUpdate: {fileID: 11400000, guid: 6350092fb2ad52a4cbd5e5191a839491, type: 2}
+  Meat2OrderUpdate: {fileID: 11400000, guid: d6b1f7700d189cc42a4445dbdf50d113, type: 2}
+  Meat3OrderUpdate: {fileID: 11400000, guid: 636acb9c354d6584290828914f0d0591, type: 2}
+  Meat4OrderUpdate: {fileID: 11400000, guid: 557589b9589b1224b91b7806db189bdb, type: 2}
+  currentCan: {fileID: 11400000, guid: aa682331d1445b148b4741b344094598, type: 2}
+  resetScreen: {fileID: 11400000, guid: ec86c1ae696191f4f90ab68991c920b3, type: 2}
+  gameEvents:
+  - {fileID: 11400000, guid: bb6a7b9aa11dd534b9e17a72c121c721, type: 2}
+  - {fileID: 11400000, guid: 380b7414c9ca5114f8403801bf93050f, type: 2}
+  - {fileID: 11400000, guid: 753aac4c62b83944f8e1f35f27c9ac18, type: 2}
+  - {fileID: 11400000, guid: 09957175c44a01a44abc3d34a2564030, type: 2}
+  levelCounter: 0
+  correctOrder: 0
+  scanCompletedBool: 0
+  orderCorrect: {fileID: 11400000, guid: 87cb3ed2848bdd04ca242eef12818f11, type: 2}
+--- !u!114 &598919689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598919686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e521ded614f2f540910f7949dd3980d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvents: {fileID: 11400000, guid: e229200a9bb9e3546b27794686168d9c, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 598919688}
+        m_TargetAssemblyTypeName: Level2Controller, Assembly-CSharp
+        m_MethodName: Meat4Detected
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &598919690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598919686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e521ded614f2f540910f7949dd3980d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvents: {fileID: 11400000, guid: c6c50fc1c0193a2458ca82bd19a1bcf0, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 598919688}
+        m_TargetAssemblyTypeName: Level2Controller, Assembly-CSharp
+        m_MethodName: Meat3Detected
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &598919691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598919686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e521ded614f2f540910f7949dd3980d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvents: {fileID: 11400000, guid: 1c19a2e8d24058f489db02949900b72d, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 598919688}
+        m_TargetAssemblyTypeName: Level2Controller, Assembly-CSharp
+        m_MethodName: Meat2Detected
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &598919692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598919686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e521ded614f2f540910f7949dd3980d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvents: {fileID: 11400000, guid: c50495064c313d8479beff3d2cb09d39, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 598919688}
+        m_TargetAssemblyTypeName: Level2Controller, Assembly-CSharp
+        m_MethodName: Meat1Detected
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &612768231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,32 +1626,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3844065889909022326, guid: b20c35a931a870e45a7c5ac0e84ff057, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1885987659}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b20c35a931a870e45a7c5ac0e84ff057, type: 3}
---- !u!1 &664428956 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 251f06da665fcc04eac5d6afb150fa48, type: 3}
-  m_PrefabInstance: {fileID: 1585097986}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &664428958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664428956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77922319b3aa568428235d85e9f57467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnItemList: []
-  frequency: 0
-  initialSpeed: 0
 --- !u!1 &808117464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2052,11 +2206,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.4470072, y: 3.5122213, z: 0.12519169}
   m_Center: {x: -2.4948182, y: 1.7561107, z: -4.157785}
---- !u!4 &889107034 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3048023730004530390, guid: 9b2c2be247f2b754db2b4b92b79a6b37, type: 3}
-  m_PrefabInstance: {fileID: 5254133943068033299}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &953741962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2128,6 +2277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1006003397}
   - component: {fileID: 1006003396}
+  - component: {fileID: 1006003398}
   m_Layer: 0
   m_Name: meatGrinder
   m_TagString: Untagged
@@ -2153,6 +2303,19 @@ MonoBehaviour:
   openGrinder: {fileID: 889107021}
   closedGrinder: {fileID: 143057763}
   canSpawn: {fileID: 1060008447}
+  canCorrect: 0
+  grinderComplete: {fileID: 11400000, guid: dce6a5ef5bd9b844886b4d120f2dbb3c, type: 2}
+  listOfInputMeatBroadcast:
+  - {fileID: 11400000, guid: c50495064c313d8479beff3d2cb09d39, type: 2}
+  - {fileID: 11400000, guid: 1c19a2e8d24058f489db02949900b72d, type: 2}
+  - {fileID: 11400000, guid: c6c50fc1c0193a2458ca82bd19a1bcf0, type: 2}
+  - {fileID: 11400000, guid: e229200a9bb9e3546b27794686168d9c, type: 2}
+  - {fileID: 11400000, guid: b42e9e36392802c419ff0c606c6323b6, type: 2}
+  objectsToDetect:
+  - meat1
+  - meat2
+  - meat3
+  - meat4
 --- !u!4 &1006003397
 Transform:
   m_ObjectHideFlags: 0
@@ -2170,6 +2333,34 @@ Transform:
   - {fileID: 1060008448}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1006003398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006003395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e521ded614f2f540910f7949dd3980d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvents: {fileID: 11400000, guid: b42e9e36392802c419ff0c606c6323b6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1006003396}
+        m_TargetAssemblyTypeName: grinderScript, Assembly-CSharp
+        m_MethodName: canCheck
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1054899340 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 331b5cc0b136e2c42b4c62e1d0179fe1, type: 3}
@@ -3822,7 +4013,7 @@ Transform:
   m_GameObject: {fileID: 1575915226}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.101, y: 0.61, z: -0.575}
+  m_LocalPosition: {x: 0.101, y: 0.61, z: -0.487}
   m_LocalScale: {x: 0.17799, y: 0.17799, z: 0.17799}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3955,10 +4146,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 251f06da665fcc04eac5d6afb150fa48, type: 3}
       insertIndex: -1
       addedObject: {fileID: 810497721}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 251f06da665fcc04eac5d6afb150fa48, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 664428958}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 251f06da665fcc04eac5d6afb150fa48, type: 3}
 --- !u!1 &1627304642
 GameObject:
@@ -6515,10 +6703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3048023730004530390, guid: 9b2c2be247f2b754db2b4b92b79a6b37, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 113590787}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4928027890849739114, guid: 9b2c2be247f2b754db2b4b92b79a6b37, type: 3}
       insertIndex: -1
@@ -6567,3 +6752,4 @@ SceneRoots:
   - {fileID: 1208779351}
   - {fileID: 1100622780}
   - {fileID: 1779555461}
+  - {fileID: 598919687}
