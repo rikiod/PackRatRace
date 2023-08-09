@@ -386,7 +386,7 @@ public class ScreenController : MonoBehaviour
 
         Reset();
         check1.sprite = bullet;
-        num1.sprite = sp_four;
+        num1.sprite = sp_one;
         item1.sprite = blueCan;
         item1.color = Color.white;
 
