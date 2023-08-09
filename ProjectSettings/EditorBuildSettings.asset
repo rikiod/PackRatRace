@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
     guid: f9638553f3eb94fca80c5a703ba7dca4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 528e7e4d6394bbc4093246e0a9098356
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: bbb549c3fa0252b4188977be698a57e1
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e0d4569a3c80c604b9acdc16f356b819, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 19e08b972347e3e4a850324214d660d3, type: 2}
