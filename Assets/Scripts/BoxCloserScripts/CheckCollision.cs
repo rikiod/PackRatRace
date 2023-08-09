@@ -73,23 +73,31 @@ public class CheckCollision : MonoBehaviour //needs to implement listener for on
                 for (int i = detectedItems.Count - 1; i >= 0; i--)
                 {
 /*                    Debug.Log(detectedItems[i]);*/
-                    if (objectToDetect.Contains(detectedItems[i].name))
+                    if (detectedItems[i] != null)
                     {
-                        counter[detectedItems[i].gameObject.name]++;
+                        if (objectToDetect.Contains(detectedItems[i].name))
+                        {
+                            counter[detectedItems[i].gameObject.name]++;
+                        }
                     }
                 }
-                for (int i = detectedItems.Count - 1; i >= 0; i--)
+                    
+            }
+            for (int i = detectedItems.Count - 1; i >= 0; i--)
+            {
+/*                    Debug.Log(detectedItems[i]);*/
+                if (detectedItems[i] != null)
                 {
-                    Debug.Log(detectedItems[i]);
                     if (objectToDetect.Contains(detectedItems[i].name) || detectedItems[i].name == "BoxOpen")
                     {
                         Destroy(detectedItems[i].gameObject);
                     }
                 }
-                detectedItems.Clear();
             }
+            detectedItems.Clear();
         }
     }
+    
     public void OnTriggerEnter(Collider other)
     {
         if (runCollision)

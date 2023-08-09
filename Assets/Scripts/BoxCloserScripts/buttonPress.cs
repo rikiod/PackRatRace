@@ -10,10 +10,13 @@ public class buttonPress : MonoBehaviour
     public UnityEvent onRelease;
     GameObject pusher;
     bool isPressed;
+    public AudioSource audioSource;
+    private bool wasPressed;
     // Start is called before the first frame update
     void Start()
     {
-        
+        isPressed = false;
+        wasPressed = false;
     }
 
     // Update is called once per frame
@@ -30,6 +33,7 @@ public class buttonPress : MonoBehaviour
             pusher = other.gameObject;
             onPress.Invoke();
             isPressed = true;
+            audioSource.Play();
         }
     }
 
@@ -38,8 +42,23 @@ public class buttonPress : MonoBehaviour
         if (pusher == other.gameObject)
         {
             button.transform.position += button.transform.right * 1/50;
-            onRelease.Invoke();
+            if (!wasPressed)
+            {
+                onRelease.Invoke();
+                startTimer();
+            }
             isPressed = false;
         }
+    }
+
+    private void startTimer()
+    {
+        wasPressed = true;
+        StartCoroutine(buttonDelay());
+    }
+    IEnumerator buttonDelay()
+    {
+        yield return new WaitForSeconds(6);
+        wasPressed = false;
     }
 }
