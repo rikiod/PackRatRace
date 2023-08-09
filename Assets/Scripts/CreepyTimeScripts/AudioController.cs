@@ -11,7 +11,7 @@ public class AudioController : MonoBehaviour
     // Update is called once per frame
     void Update() {
         if (fade) {
-            audioSource.volume -= 0.01f;
+            audioSource.volume -= 0.002f;
             if (audioSource.volume <= 0) {
                 fade = false;
             }
