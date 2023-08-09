@@ -38,6 +38,7 @@ public class ScreenController : MonoBehaviour
     public Sprite sp_five;
     public Sprite bigCheck;
     public Sprite bigX;
+    public Sprite blueCan;
 
     private bool FoodUpdate = false;
     private int Food1;
@@ -53,6 +54,8 @@ public class ScreenController : MonoBehaviour
     private bool orderCompleted;
     private bool orderCorrect;
     private bool resetScreen;
+    
+    private bool creepyness = false;
 
     // Start is called before the first frame update
     void Start()
@@ -107,6 +110,11 @@ public class ScreenController : MonoBehaviour
                 FoodUpdate = false;
             }
             orderCompleted = false;
+        }
+
+
+        if (creepyness) {
+            Food5Order();
         }
 
     }
@@ -374,6 +382,16 @@ public class ScreenController : MonoBehaviour
 
     }
 
+    private void Food5Order() {
+
+        Reset();
+        check1.sprite = bullet;
+        num1.sprite = sp_four;
+        item1.sprite = blueCan;
+        item1.color = Color.white;
+
+    }
+
     // input is the number of the food type => Just adds the check marks
     private void ItemComplete(int itemNumber) {
         if (itemNumber == 1) {
@@ -408,4 +426,15 @@ public class ScreenController : MonoBehaviour
         bigThing.sprite = bigX;
         bigThing.enabled = true;
     }
+
+
+
+
+
+    public void CreepyTime() {
+        creepyness = true;
+        print(creepyness);
+    }
+
+
 }
