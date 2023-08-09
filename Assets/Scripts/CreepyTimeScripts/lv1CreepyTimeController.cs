@@ -10,6 +10,7 @@ public class lv1Controller : MonoBehaviour
     public ratMovement ratMovement;
     public ScoreController scoreController;
     public ScreenController screenController;
+    public FightDialogue fightDialogue;
     int completedBoxes = 0;
 
     public void BoxNumberListener(Component sender, object data) { //called by both listeners, they're sending different data types
@@ -34,16 +35,16 @@ public class lv1Controller : MonoBehaviour
             // redo the same box
         }
 
-        if (completedBoxes == 2) {
+        if (completedBoxes == 1) {
                 ratMovement.D1();
             }
-            if (completedBoxes == 3) {
+            if (completedBoxes == 2) {
                 catBossHallway.D2();
             }
-            if (completedBoxes == 4) {
+            if (completedBoxes == 3) {
                 ratMovement.D2();
             }
-            if (completedBoxes == 5) {
+            if (completedBoxes == 4) {
                 CreepyTime();
             }
     }
@@ -54,6 +55,7 @@ public class lv1Controller : MonoBehaviour
         catBossWindow.StopMovement();
         catBossHallway.D3();
         screenController.CreepyTime();
+        fightDialogue.CreepyTime();
     }
 
 
@@ -63,9 +65,9 @@ public class lv1Controller : MonoBehaviour
     //     StartCoroutine(Testingg());
     // }
 
-    // IEnumerator Testingg() {
-    //     yield return new WaitForSeconds(5);
-    //     CreepyTime();
-    //     print("activating Creepy Time");
-    // }
+    IEnumerator Testingg() {
+        yield return new WaitForSeconds(5);
+        CreepyTime();
+        print("activating Creepy Time");
+    }
 }

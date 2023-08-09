@@ -20,7 +20,8 @@ public class catMovement : MonoBehaviour
     [SerializeField] Vector3 enterAngle;
     [SerializeField] Vector3 returnAngle;
     [SerializeField] float spinSpeed = -10f;
-    float isMoving = 0;  
+    float isMoving = 0;
+    bool stop = true;
     
 
     // Start is called before the first frame update
@@ -72,6 +73,12 @@ public class catMovement : MonoBehaviour
                 transform.eulerAngles = watchingAngle;
                 StartCoroutine(ActionInitiation());
             }
+        }
+
+
+        if (stop) {
+            transform.position = bopStartingPoint;
+            transform.eulerAngles = watchingAngle;
         }
     }
 
@@ -125,6 +132,7 @@ public class catMovement : MonoBehaviour
     public void StartMovement() {
 
         StartCoroutine(ActionInitiation());
+        stop = false;
 
     }
 
@@ -133,6 +141,7 @@ public class catMovement : MonoBehaviour
         isMoving = 0;
         transform.position = bopStartingPoint;
         transform.eulerAngles = watchingAngle;
+        stop = true;
 
     }
 }
