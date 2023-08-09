@@ -95,6 +95,8 @@ public class catMovement2 : MonoBehaviour
         textBox.SetActive(true);
 
         if (num == 1) {
+            
+            yield return new WaitForSeconds(3);
             Text.text = "Welcome to the Purrfect Knead factory.";
             audioSource.Play();
             yield return new WaitForSeconds(textWaitTime);
@@ -143,6 +145,8 @@ public class catMovement2 : MonoBehaviour
             //end level, go to lv2
             sceneTransitionManager.GoToScene(2);
 
+            yield return new WaitForSeconds(10);
+
 
         }
         
@@ -160,6 +164,7 @@ public class catMovement2 : MonoBehaviour
     }
 
     public void D3() {
+        CatBossWindow.StopMovement();
         StartCoroutine(Waiting());
     }
 

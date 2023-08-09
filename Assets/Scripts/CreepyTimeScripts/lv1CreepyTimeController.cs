@@ -35,16 +35,16 @@ public class lv1Controller : MonoBehaviour
             // redo the same box
         }
 
-        if (completedBoxes == 2) {
+        if (completedBoxes == 1) {
                 ratMovement.D1();
             }
-            if (completedBoxes == 3) {
+            if (completedBoxes == 2) {
                 catBossHallway.D2();
             }
-            if (completedBoxes == 4) {
+            if (completedBoxes == 3) {
                 ratMovement.D2();
             }
-            if (completedBoxes == 5) {
+            if (completedBoxes == 4) {
                 CreepyTime();
             }
     }
