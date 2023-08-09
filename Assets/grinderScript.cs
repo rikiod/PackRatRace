@@ -19,13 +19,22 @@ public class grinderScript : MonoBehaviour
 
     private Dictionary<string, int> inGrinder = new Dictionary<string, int>();
 
+    public delegate void updateScreen();
+
     public static event Action<Dictionary<string, int>> OnCanning;
+
+
+    //for the logic
+    [SerializeField]
+    public List<GameObject> meats = new List<GameObject>();
+
 
     // Start is called before the first frame update
     void Start()
     {
         grinder = Instantiate(openGrinder, transform.position, Quaternion.Euler(0, 180, 0));
         detector = grinder.transform.GetChild(0).gameObject;
+
     }
 
     // Update is called once per frame
@@ -68,5 +77,50 @@ public class grinderScript : MonoBehaviour
     {
         int amount = inGrinder[other.gameObject.name];
         inGrinder[other.gameObject.name] = amount - 1;
+    }
+
+    private void doSomething(){
+        //generate orders
+        
+
+        //send orders to screen
+
+        //compare to what is given
+
+        //update the screen 
+
+        //order the can accordingly
+
+        //receive good/bad completion from bin
+
+        //update the screen
+    }
+
+    public List<int> RandomDistribution(int originalNumber, int arraySize)
+    {
+        List<int> resultArray = new List<int>();
+
+        System.Random random = new System.Random();
+        int maxValue = originalNumber / arraySize;
+
+        for (int i = 0; i < arraySize - 1; i++)
+        {
+            int randomValue = random.Next(0, maxValue + 1);
+            resultArray.Add(randomValue);
+            originalNumber -= randomValue;
+        }
+
+        resultArray.Add(originalNumber);
+
+        // Shuffle the list to make the distribution random
+        for (int i = 0; i < resultArray.Count; i++)
+        {
+            int temp = resultArray[i];
+            int randomIndex = random.Next(i, resultArray.Count);
+            resultArray[i] = resultArray[randomIndex];
+            resultArray[randomIndex] = temp;
+        }
+
+        return resultArray;
     }
 }
