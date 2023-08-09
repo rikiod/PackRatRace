@@ -4760,7 +4760,7 @@ MonoBehaviour:
   - Food2
   - Food3
   - Food4
-  noOfBoxes: 3
+  noOfBoxes: 2
   inputNumber: 4
   Food1OrderUpdate: {fileID: 11400000, guid: 3c98e4ad20171974e9be2d3766abdc04, type: 2}
   Food2OrderUpdate: {fileID: 11400000, guid: d3d1b95158de6db4097b16ad9ee58c8d, type: 2}

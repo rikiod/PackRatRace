@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 //no need to implement listener for onBoxPacked. It is automatically called at the end of scan completed
@@ -131,14 +132,11 @@ public class LevelController : MonoBehaviour
         if (beginFinalCountdown)
         {
             counter++;
-            if (counter <= 100)
-            {
-            }
-            else if (counter <= 110)
+            if (counter == 100)
             {
                 resetScreen.Raise(this, true);
             }
-            else if (counter <=111)
+            else if (counter == 101)
             {
                 counter = 0;
                 beginFinalCountdown = false;
