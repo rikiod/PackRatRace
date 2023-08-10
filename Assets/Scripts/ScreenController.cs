@@ -61,7 +61,6 @@ public class ScreenController : MonoBehaviour
     void Start()
     {
         Reset();
-
     }
 
     void Update()
@@ -118,8 +117,6 @@ public class ScreenController : MonoBehaviour
         }
 
     }
-
-
 
     //To recieve new order
     public void Food1OrderUpdate(Component sender, object data)
@@ -411,6 +408,7 @@ public class ScreenController : MonoBehaviour
     // to check if overall order is correct
     public void onOrderComplete (Component sender, object data)
     {
+        Debug.Log("Screen On Order Complete Called");
         if (data is bool)
         {
             FoodUpdate = true;
@@ -426,15 +424,8 @@ public class ScreenController : MonoBehaviour
         bigThing.sprite = bigX;
         bigThing.enabled = true;
     }
-
-
-
-
-
     public void CreepyTime() {
         creepyness = true;
         print(creepyness);
     }
-
-
 }

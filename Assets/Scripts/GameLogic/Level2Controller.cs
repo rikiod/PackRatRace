@@ -175,6 +175,7 @@ public class Level2Controller : MonoBehaviour
 
     public void detectCanDeposited(Component sender, object data)
     {
+        Debug.Log(data);
         beginFinalCountdown = true;
     }
 }

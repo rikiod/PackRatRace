@@ -2610,8 +2610,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c986d50948f1bf94a9cd7e1dc57ef739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctCan: {fileID: 7082774424390989250, guid: 463738fd57eb0f5458566f1facec4730, type: 3}
-  incorrectCan: {fileID: 7082774424390989250, guid: 1eb8782433a1526419b87e568b60bdd0, type: 3}
   canDeposited: {fileID: 11400000, guid: 4cf2647e953402f438f70a52880c254f, type: 2}
 --- !u!1 &808117464
 GameObject:
@@ -4826,6 +4824,10 @@ PrefabInstance:
     - target: {fileID: 8381595365007109076, guid: 828917e1e9ac4394ebd1a139894e8647, type: 3}
       propertyPath: minPay
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8739318473085890317, guid: 828917e1e9ac4394ebd1a139894e8647, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8097,7 +8099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8490196966152232169, guid: 1eb8782433a1526419b87e568b60bdd0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.66
+      value: 4.374
       objectReference: {fileID: 0}
     - target: {fileID: 8490196966152232169, guid: 1eb8782433a1526419b87e568b60bdd0, type: 3}
       propertyPath: m_LocalPosition.y

@@ -6,19 +6,16 @@ using UnityEngine.Events;
 public class CanRecepticle : MonoBehaviour
 {
     // public BoxCollider canCollider;
-    public GameObject correctCan;
-    public GameObject incorrectCan;
     // public GameObject specialCan;
     public GameEvents canDeposited;
 
     private void OnTriggerEnter(Collider other) {
         // print("collision !!!");
-        // Debug.Log(other.gameObject);
 
-        if (other.gameObject == correctCan) {
+        if (other.gameObject.name == "True") {
             canDeposited.Raise(this, true);
         }
-        else if (other.gameObject == incorrectCan)
+        else if (other.gameObject.name == "False")
         {
             canDeposited.Raise(this, false);
         }
