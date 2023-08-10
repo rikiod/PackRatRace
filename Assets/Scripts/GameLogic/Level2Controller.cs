@@ -170,7 +170,11 @@ public class Level2Controller : MonoBehaviour
                 }
                 orderCorrect.Raise(this, correctOrder);
             }
-            beginFinalCountdown = true;
         }
+    }
+
+    public void detectCanDeposited(Component sender, object data)
+    {
+        beginFinalCountdown = true;
     }
 }
