@@ -29,9 +29,12 @@ public class grinderScript : MonoBehaviour
     private List<GameObject> toDestroy = new List<GameObject>();
 
     private IEnumerator coroutine;
+
+    private Vector3 currentPos;
     // Start is called before the first frame update
     void Start()
     {
+        currentPos = transform.position;
         grinder = Instantiate(openGrinder, transform.position, Quaternion.Euler(0, 180, 0));
         // detector = grinder.transform.GetChild(0).gameObject;
         for (int i = 0; i < listOfInputMeatBroadcast.Count; i++)
@@ -89,13 +92,13 @@ public class grinderScript : MonoBehaviour
             Destroy(meat);
         }
         Destroy(grinder);
-        grinder = Instantiate(closedGrinder, transform.position, Quaternion.Euler(0, 180, 0));
+        grinder = Instantiate(closedGrinder, currentPos, Quaternion.Euler(0, 180, 0));
         yield return new WaitForSeconds(waitTime);
         newCan = Instantiate(can, canSpawn.transform.position, Quaternion.identity);
-        newCan.GetComponent<Rigidbody>().velocity = transform.up * canSpeed;
-        newCan.transform.parent = canSpawn.transform;
+        // newCan.GetComponent<Rigidbody>().velocity = transform.up * canSpeed;
+        // newCan.transform.parent = transform;
         Destroy(grinder);
-        grinder = Instantiate(openGrinder, transform.position, Quaternion.Euler(0, 180, 0));
+        grinder = Instantiate(openGrinder, currentPos, Quaternion.Euler(0, 180, 0));
         newCan.name = Data.ToString();
     }
 
@@ -117,7 +120,7 @@ public class grinderScript : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         toDestroy.Remove(other.gameObject);
-        Debug.Log("MEEE");
+        // Debug.Log("MEEE");
         int amount = inGrinder[other.gameObject.name];
         inGrinder[other.gameObject.name] = amount - 1;
     }
