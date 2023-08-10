@@ -50,7 +50,7 @@ public class Level2Controller : MonoBehaviour
             List<int> splitNumbers = RandomDistribution(inputNumber, noOfObjects);
             for (int i = 0; i < noOfObjects; i++)
             {
-                Debug.Log(objects[i] + " : " + splitNumbers[i].ToString());
+                // Debug.Log(objects[i] + " : " + splitNumbers[i].ToString());
                 levelObjectives[objects[i]] = splitNumbers[i];
             }
             listOfLevelRequirements.Add(levelObjectives);

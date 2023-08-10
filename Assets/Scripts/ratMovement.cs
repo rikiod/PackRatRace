@@ -67,8 +67,11 @@ public class ratMovement : MonoBehaviour
         textBox.SetActive(true);
 
         if (num == 1) {
-            Text.text = "Hey man! I'm always happy to see new guys around here, a lot of folks don't last very long.";
+            Text.text = "Hey man! I'm always happy to see new guys around here,";
             audioSource.Play();
+            yield return new WaitForSeconds(textWaitTime);
+
+            Text.text = "a lot of folks don't last very long.";
             yield return new WaitForSeconds(textWaitTime);
 
             Text.text = "Feel free to ask me anything if you need it, I'm just next door!";
