@@ -143,7 +143,7 @@ public class catMovement2 : MonoBehaviour
 
 
             //end level, go to lv2
-            sceneTransitionManager.GoToScene(2);
+            sceneTransitionManager.GoToScene(3);
 
             yield return new WaitForSeconds(10);
 
