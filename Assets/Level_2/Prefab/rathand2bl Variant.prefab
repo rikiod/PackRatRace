@@ -78,38 +78,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: edaf69d9bd906fc4d9662fc80d884123, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -3579103873276181335}
+      addedObject: {fileID: 2398620954466767104}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: edaf69d9bd906fc4d9662fc80d884123, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2398620954466767104}
+      addedObject: {fileID: 8347577257015944098}
   m_SourcePrefab: {fileID: 100100000, guid: edaf69d9bd906fc4d9662fc80d884123, type: 3}
 --- !u!1 &5747258549108937025 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: edaf69d9bd906fc4d9662fc80d884123, type: 3}
   m_PrefabInstance: {fileID: 4828761374496271376}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &-3579103873276181335
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5747258549108937025}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!54 &2398620954466767104
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -137,3 +115,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &8347577257015944098
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5747258549108937025}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.8523805, y: 0.5082742, z: 1.1507974}
+  m_Center: {x: -0.39319843, y: 1.4381183, z: 1.454662}
