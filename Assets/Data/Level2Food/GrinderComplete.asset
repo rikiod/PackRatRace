@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f406dec44180dc34cb053447ecd7ce26, type: 3}
   m_Name: GrinderComplete
   m_EditorClassIdentifier: 
-  listeners: []
+  listeners:
+  - {fileID: 0}
